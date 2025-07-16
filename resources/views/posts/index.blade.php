@@ -16,188 +16,70 @@
             --dark: #333333;
             --light: #ffffff;
         }
-        
-        /* Modern Navbar */
+        body {
+            background-color: var(--cream);
+            font-family: 'Segoe UI', sans-serif;
+        }
         .navbar-ruangpulih {
-            background: var(--light);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            padding: 0.8rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background-color: var(--orange);
+            color: var(--light);
         }
-        
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--orange) !important;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .navbar-brand img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .nav-link {
-            color: var(--dark) !important;
+        .navbar-ruangpulih .nav-link,
+        .navbar-ruangpulih .navbar-brand {
+            color: var(--light);
             font-weight: 500;
-            margin: 0 0.5rem;
-            position: relative;
-            padding: 0.5rem 0;
         }
-        
-        .nav-link:hover, .nav-link.active {
-            color: var(--orange) !important;
+        .navbar-ruangpulih .nav-link:hover {
+            color: var(--dark);
         }
-        
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--orange);
-            border-radius: 3px;
-        }
-        
-        .btn-ruangpulih {
-            background: var(--orange);
-            color: white;
-            border-radius: 50px;
-            padding: 0.5rem 1.5rem;
-            font-weight: 500;
-            transition: all 0.3s;
+        .navbar-ruangpulih .btn-ruangpulih {
+            background-color: var(--light);
+            color: var(--orange);
             border: none;
         }
-        
-        .btn-ruangpulih:hover {
-            background: #e5722a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(252, 130, 61, 0.3);
-        }
-        
-        /* CRUD Table Styles */
         .crud-container {
-            background: var(--cream);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             padding: 2rem;
-            margin-top: 1rem;
         }
-        
         .table-header {
-            background: var(--orange);
+            background-color: var(--blue);
             color: white;
         }
-        
-        .table-header th {
-            border: none;
-            padding: 1rem;
-            font-weight: 600;
-        }
-        
-        .table > :not(:first-child) {
-            border-top: none;
-        }
-        
-        .table tbody tr {
-            transition: all 0.2s;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-        
-        .table tbody tr:hover {
-            background: rgba(255,255,255,0.7);
-            transform: translateX(4px);
-        }
-        
-        .badge-category {
-            background: var(--blue);
+        .btn-ruangpulih {
+            background-color: var(--orange);
             color: white;
         }
-        
-        .badge-published {
-            background: var(--green);
-            color: var(--dark);
+        .btn-ruangpulih:hover {
+            background-color: #e36d25;
         }
-        
-        .badge-draft {
-            background: var(--yellow);
-            color: var(--dark);
-        }
-        
         .thumbnail-img {
-            width: 80px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
         }
-        
-        .thumbnail-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
         .action-btn {
-            width: 35px;
-            height: 35px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin: 0 3px;
-            transition: all 0.2s;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
         }
-        
         .btn-view {
-            background: rgba(136, 180, 255, 0.2);
-            color: var(--blue);
+            color: #3498db;
         }
-        
         .btn-edit {
-            background: rgba(244, 195, 71, 0.2);
-            color: #d6a01c;
+            color: #f1c40f;
         }
-        
         .btn-delete {
-            background: rgba(255, 0, 0, 0.1);
-            color: #ff4444;
+            color: #e74c3c;
         }
-        
-        .action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        .badge-published {
+            background-color: var(--green);
         }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .navbar-brand {
-                font-size: 1.3rem;
-            }
-            
-            .crud-container {
-                padding: 1rem;
-                margin: 0 -15px;
-                border-radius: 0;
-            }
-            
-            .table-responsive {
-                margin-bottom: 1rem;
-            }
-            
-            .thumbnail-img {
-                width: 50px;
-                height: 40px;
-            }
+        .badge-draft {
+            background-color: var(--yellow);
         }
     </style>
 </head>
 <body>
-    <!-- Modern Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-ruangpulih">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -226,7 +108,7 @@
                     <a href="#" class="btn btn-ruangpulih me-2">
                         <i class="fas fa-comment-dots me-1"></i> Ruang Curhat
                     </a>
-                    <a href="#" class="btn btn-outline-secondary">
+                    <a href="#" class="btn btn-outline-light">
                         <i class="fas fa-user"></i>
                     </a>
                 </div>
@@ -234,7 +116,7 @@
         </div>
     </nav>
 
-    <!-- CRUD Content -->
+    <!-- Konten Postingan -->
     <div class="container crud-container">
         @if(session('success'))
         <div class="alert alert-success alert-dismissible fade show">
@@ -259,7 +141,6 @@
                         <th width="50">No</th>
                         <th>Judul</th>
                         <th>Konten</th>
-                        <th>Kategori</th>
                         <th>Thumbnail</th>
                         <th>Status</th>
                         <th>Tanggal</th>
@@ -272,7 +153,6 @@
                         <td class="fw-bold">{{ $index + 1 }}</td>
                         <td class="fw-semibold">{{ $post->title }}</td>
                         <td class="text-muted small">{{ Str::limit(strip_tags($post->content), 50) }}</td>
-                        <td><span class="badge badge-category">{{ $post->category_name }}</span></td>
                         <td>
                             @if($post->thumbnail)
                                 <img src="{{ asset('storage/' . $post->thumbnail) }}" class="thumbnail-img" alt="Thumbnail">
@@ -301,7 +181,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="action-btn btn-delete" title="Hapus" onclick="return confirm('Hapus postingan ini?')">
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fas fa-trash"></i>
                                 </button>
                             </form>
                         </td>
@@ -311,28 +191,14 @@
             </table>
         </div>
 
-        <div class="d-flex justify-content-center mt-4">
-            {{ $posts->links() }}
+        @if($posts->isEmpty())
+        <div class="text-center text-muted py-4">
+            <i class="fas fa-folder-open fa-2x mb-3"></i>
+            <p>Belum ada postingan yang tersedia.</p>
         </div>
+        @endif
     </div>
 
-    <footer class="bg-light text-center py-4 mt-5">
-        <div class="container">
-            <p>&copy; {{ date('Y') }} Ruang Pulih - Platform Edukasi Kesehatan Mental</p>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar-ruangpulih');
-            if (window.scrollY > 10) {
-                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
-            } else {
-                navbar.style.boxShadow = '0 2px 15px rgba(0,0,0,0.1)';
-            }
-        });
-    </script>
 </body>
 </html>

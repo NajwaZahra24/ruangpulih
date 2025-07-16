@@ -28,7 +28,6 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'category' => 'required|in:edukasi,informasi',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'published_at' => 'nullable|date'
         ]);
@@ -54,6 +53,7 @@ class PostController extends Controller
         if (!$post->published_at) {
             abort(404); 
         }
+
         return view('posts.show', compact('post'));
     }
 
@@ -71,7 +71,6 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|max:255',
             'content' => 'required',
-            'category' => 'required|in:edukasi,informasi',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'published_at' => 'nullable|date'
         ]);

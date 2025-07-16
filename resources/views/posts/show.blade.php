@@ -34,11 +34,8 @@
             <img src="{{ asset('storage/' . $post->thumbnail) }}" class="card-img-top" alt="{{ $post->title }}">
             @endif
             <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="badge bg-primary">{{ $post->category_name }}</span>
-                    <div class="text-muted">
-                        Dipublikasikan: {{ optional($post->published_at)->format('d M Y H:i') ?? 'Belum dipublikasikan' }}
-                    </div>
+                <div class="text-muted mb-3">
+                    Dipublikasikan: {{ optional($post->published_at)->format('d M Y H:i') ?? 'Belum dipublikasikan' }}
                 </div>
                 
                 <h1 class="card-title">{{ $post->title }}</h1>

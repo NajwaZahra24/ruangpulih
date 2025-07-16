@@ -12,7 +12,6 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->enum('category', ['edukasi', 'informasi']);
             $table->string('thumbnail')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
