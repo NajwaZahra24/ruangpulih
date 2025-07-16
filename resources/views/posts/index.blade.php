@@ -213,7 +213,7 @@
                         <a class="nav-link active" href="{{ route('posts.index') }}">Postingan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Edukasi</a>
+                        <a class="nav-link" href="#">Audio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Meditasi</a>
