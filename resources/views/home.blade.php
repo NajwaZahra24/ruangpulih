@@ -3,613 +3,739 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruang Pulih - Kesehatan Mental</title>
+    <title>Ruang Pulih - Tempat Aman untuk Pulih</title>
     <style>
-        :root {
-            --orange: #fc823d;
-            --blue: #88b4ff;
-            --cream: #f8f4f1;
-            --green: #a5e26c;
-            --yellow: #f4c347;
-            --dark: #333333;
-            --light: #ffffff;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
+
         body {
-            background-color: var(--light);
-            color: var(--dark);
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
+            color: #333;
+            background: #fff;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Navbar */
+
+        /* Header */
         header {
-            background-color: var(--light);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 20px 0;
+            background: #fff;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
-        
+
         .logo {
-            display: flex;
-            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b35;
         }
-        
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        
-        .logo h1 {
-            color: var(--orange);
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-        
-        .nav-center {
-            display: flex;
-            align-items: center;
-        }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
-            margin-right: 30px;
+            gap: 2rem;
         }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
+
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: #333;
             font-weight: 500;
-            font-size: 1.1rem;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
-            color: var(--orange);
+            color: #ff6b35;
         }
-        
-        /* Admin Login Button */
-        .admin-login-btn {
-            background-color: var(--orange);
-            color: var(--light);
-            padding: 10px 20px;
-            border: none;
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 0.75rem 1.5rem;
             border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            font-weight: 500;
+            transition: background 0.3s;
         }
-        
-        .admin-login-btn:hover {
-            background-color: #e6741e;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(252, 130, 61, 0.3);
+
+        .cta-button:hover {
+            background: #e55a2b;
         }
-        
-        .admin-login-btn:active {
-            transform: translateY(0);
-        }
-        
-        /* Admin icon */
-        .admin-icon {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                margin-right: 15px;
-            }
-            
-            .nav-links li {
-                margin-left: 20px;
-            }
-            
-            .admin-login-btn {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .admin-login-btn {
-                padding: 8px 12px;
-                font-size: 0.8rem;
-            }
-        }
-        
+
         /* Hero Section */
         .hero {
-            background: var(--cream);
-            padding: 100px 0 150px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            max-width: 600px;
-        }
-        
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-        
-        .hero h2 span {
-            color: var(--orange);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: #555;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--orange);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: #e5733d;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(252, 130, 61, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--orange);
-            color: var(--orange);
-            margin-left: 15px;
-        }
-        
-        .btn-outline:hover {
-            background: var(--orange);
-            color: white;
-        }
-        
-        .hero-image {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50%;
-            max-width: 600px;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-        }
-        
-        /* Stats Section */
-        .stats {
-            background: var(--orange);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .stat-item {
-            padding: 0 20px;
-        }
-        
-        .stat-item h3 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-        
-        /* About Section */
-        .about {
-            padding: 120px 0;
-            background-color: var(--light);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--orange);
-            margin-bottom: 15px;
-        }
-        
-        .section-title p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .about-content {
+            background: linear-gradient(135deg, #fff5f2 0%, #ffeee8 100%);
+            padding: 120px 0 80px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            gap: 60px;
         }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: #555;
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        /* Features */
-        .features {
-            padding: 80px 0;
-            background: var(--cream);
-        }
-        
-        .features-grid {
+
+        .hero-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
-        
-        .feature-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
         }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #666;
+            line-height: 1.8;
         }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--blue);
-            border-radius: 50%;
+
+        .hero-images {
+            position: relative;
+            height: 500px;
+        }
+
+        .hero-image {
+            position: absolute;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-image:nth-child(1) {
+            width: 200px;
+            height: 250px;
+            background: linear-gradient(45deg, #ff6b35, #ff8c42);
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+
+        .hero-image:nth-child(2) {
+            width: 180px;
+            height: 200px;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            top: 50px;
+            right: 50px;
+            z-index: 2;
+        }
+
+        .hero-image:nth-child(3) {
+            width: 150px;
+            height: 180px;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            bottom: 0;
+            left: 100px;
+            z-index: 1;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b35, #ff8c42);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
+            color: white;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
         }
-        
-        .feature-icon img {
+
+        .about-image:nth-child(2) {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .service-icon {
             width: 40px;
             height: 40px;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .feature-card p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        /* Psychologists Section */
-        .psychologists {
-            padding: 120px 0;
-            background-color: var(--light);
-        }
-        
-        .psychologist-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .psychologist-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            padding: 30px;
-            transition: transform 0.3s;
-        }
-        
-        .psychologist-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .psychologist-image {
-            width: 150px;
-            height: 150px;
+            background: #ff6b35;
             border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 20px;
-            border: 3px solid var(--blue);
+            margin-right: 1rem;
         }
-        
-        .psychologist-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        .service-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
         }
-        
-        .psychologist-card h3 {
-            margin-bottom: 5px;
-            color: var(--orange);
-            font-size: 1.5rem;
-        }
-        
-        .psychologist-card .specialty {
-            color: var(--blue);
-            font-weight: 500;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-        
-        .psychologist-card .schedule {
-            font-size: 1rem;
+
+        .service-item p {
             color: #666;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
-        
-        /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--green) 100%);
-            color: white;
-            padding: 100px 0;
+
+        /* Mental Health Section */
+        .mental-health {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .mental-health h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .mental-health-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr 350px;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .mental-health-menu {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            position: sticky;
+            top: 120px;
+        }
+
+        .mental-health-menu h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: #333;
             text-align: center;
         }
-        
-        .cta h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
+
+        .mental-health-menu ul {
+            list-style: none;
         }
-        
-        .cta p {
+
+        .mental-health-menu li {
+            margin-bottom: 1rem;
+        }
+
+        .mental-health-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #666;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .mental-health-menu a:hover,
+        .mental-health-menu a.active {
+            background: #ff6b35;
+            color: white;
+        }
+
+        .mental-health-content {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mental-health-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            border-bottom: 2px solid #ff6b35;
+            padding-bottom: 0.5rem;
+        }
+
+        .mental-health-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .mental-health-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            border-radius: 15px;
+            position: sticky;
+            top: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* Medical Space Section */
+        .medical-space {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .medical-space h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .medical-space-subtitle {
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .service-card-icon {
+            width: 60px;
+            height: 60px;
+            background: #ff6b35;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .service-card h3 {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.9;
+            margin-bottom: 1rem;
+            color: #333;
         }
-        
+
+        .service-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Doctors Section */
+        .doctors {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .doctors h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .doctor-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .doctor-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b35, #ff8c42);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+        }
+
+        .doctor-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .doctor-specialty {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .doctor-rating {
+            color: #ff6b35;
+            font-size: 0.9rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ff6b35, #ff8c42);
+            color: white;
+        }
+
+        .quote-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quote-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .chat-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .chat-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .chat-features {
+            list-style: none;
+        }
+
+        .chat-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .chat-feature-icon {
+            width: 40px;
+            height: 40px;
+            background: #ff6b35;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+
+        .chat-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            border-radius: 15px;
+        }
+
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: #ff6b35;
             color: white;
-            padding: 80px 0 30px;
+            padding: 60px 0 20px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
-        
-        .footer-column h3 {
-            color: var(--orange);
-            margin-bottom: 25px;
+
+        .footer-section h3 {
             font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
-        
-        .footer-column p {
-            margin-bottom: 20px;
-            color: #aaa;
-            line-height: 1.8;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 15px;
-        }
-        
-        .footer-column ul li a {
-            color: #ddd;
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
             text-decoration: none;
-            transition: color 0.3s;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: block;
         }
-        
-        .footer-column ul li a:hover {
-            color: var(--orange);
+
+        .footer-section a:hover {
+            color: white;
         }
-        
-        .social-links {
+
+        .contact-form {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            flex-direction: column;
+            gap: 1rem;
         }
-        
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
             background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
+            color: white;
+            placeholder-color: rgba(255,255,255,0.6);
         }
-        
-        .social-links a:hover {
-            background: var(--orange);
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.6);
         }
-        
-        .copyright {
+
+        .contact-form button {
+            background: white;
+            color: #ff6b35;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #f0f0f0;
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            font-size: 0.9rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.6);
         }
-        
-        @media (max-width: 992px) {
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
             .hero-content {
-                max-width: 100%;
+                grid-template-columns: 1fr;
                 text-align: center;
             }
-            
-            .hero-image {
-                position: relative;
-                width: 100%;
-                transform: none;
-                margin-top: 50px;
+
+            .hero-text h1 {
+                font-size: 2rem;
             }
-            
+
+            .hero-images {
+                height: 300px;
+            }
+
             .about-content {
-                flex-direction: column;
+                grid-template-columns: 1fr;
             }
-            
-            .btn-outline {
-                margin-left: 0;
-                margin-top: 15px;
-                display: block;
+
+            .about-images {
+                grid-template-columns: 1fr;
+                margin-bottom: 2rem;
+            }
+
+            .mental-health-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .mental-health-menu {
+                position: static;
+                order: 1;
+            }
+
+            .mental-health-menu ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .mental-health-menu li {
+                margin-bottom: 0.5rem;
+            }
+
+            .mental-health-content {
+                order: 2;
+            }
+
+            .mental-health-image {
+                order: 3;
+                position: static;
+                height: 200px;
+            }
+
+            .chat-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .doctors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .about h2,
+            .mental-health h2,
+            .medical-space h2,
+            .doctors h2,
+            .quote-section h2,
+            .chat-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .about,
+            .mental-health,
+            .medical-space,
+            .doctors,
+            .quote-section,
+            .chat-section {
+                padding: 60px 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <img src="https://via.placeholder.com/40x40/fc823d/ffffff?text=RP" alt="Ruang Pulih Logo">
-                    <h1>Ruang Pulih</h1>
-                </div>
-                <div class="nav-center">
-                    <ul class="nav-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#educate">Edukasi</a></li>
-                        <li><a href="#psychologists">Konsultasi</a></li>
-                    </ul>
-                    <a href="{{ route('posts.index') }}" class="admin-login-btn">
-                        <svg class="admin-icon" viewBox="0 0 24 24">
-                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 10.1 15.9 11 17 11V21H7V11C8.1 11 9 10.1 9 9V7H3V9H5V21H7V11C7 9.9 7.9 9 9 9H15C16.1 9 17 9.9 17 9V21H19V9H21Z"/>
-                        </svg>
-                        Login Admin
-                    </a>
-                </div>
-            </nav>
-        </div>
+        <nav class="container">
+            <div class="logo">RUANG PULIH</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#edukasi">Edukasi</a></li>
+                <li><a href="#ruang-meditasi">Ruang Meditasi</a></li>
+                <li><a href="#dokter">Dokter</a></li>
+            </ul>
+            <a href="#" class="cta-button">Ruang Curhat</a>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h2>Kesehatan Mental di <span>Era Modern</span></h2>
-                <p>Atasi kecemasan dan temukan kedamaian dengan bantuan profesional kami. Kami berkomitmen untuk menemani perjalanan kesehatan mental Anda.</p>
-                <div>
-                    <a href="#psychologists" class="btn">Mulai Konsultasi</a>
-                    <a href="#educate" class="btn btn-outline">Pelajari Lebih Lanjut</a>
+                <div class="hero-text">
+                    <h1>Tempat Aman untuk Pulih Satu Hari Sekali.</h1>
+                    <p>Kami percaya bahwa setiap orang berhak mendapatkan dukungan dan perawatan yang berkualitas untuk kesehatan mental mereka. Bergabunglah dengan komunitas yang memahami dan siap membantu Anda.</p>
+                    <a href="#" class="cta-button">Mulai Sekarang</a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <img src="{{ asset('img/wlc.jpg') }}" alt="hero image">
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Klien Terbantu</p>
-            </div>
-            <div class="stat-item">
-                <h3>15+</h3>
-                <p>Psikolog Profesional</p>
-            </div>
-            <div class="stat-item">
-                <h3>98%</h3>
-                <p>Kepuasan Klien</p>
+                <div class="hero-images">
+                    <div class="hero-image"></div>
+                    <div class="hero-image"></div>
+                    <div class="hero-image"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -617,102 +743,260 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>Tentang Ruang Pulih</h2>
-                <p>Platform kesehatan mental yang menyediakan edukasi dan layanan konsultasi dengan psikolog profesional untuk membantu Anda mencapai kesejahteraan mental.</p>
-            </div>
             <div class="about-content">
+                <div class="about-images">
+                    <div class="about-image">
+                        <span>Foto Tim Medis Professional</span>
+                    </div>
+                    <div class="about-image">
+                        <span>Foto Fasilitas Konsultasi</span>
+                    </div>
+                </div>
                 <div class="about-text">
-                    <h3>Mengapa Memilih Kami?</h3>
-                    <p>Ruang Pulih hadir sebagai solusi untuk masalah kesehatan mental di era modern yang penuh tekanan. Kami memahami bahwa setiap individu memiliki kebutuhan yang unik.</p>
-                    <p>Dengan pendekatan personal dan berbasis bukti, kami membantu klien untuk memahami diri mereka sendiri, mengatasi tantangan mental, dan mencapai potensi terbaik mereka.</p>
-                    <p>Tim kami terdiri dari psikolog berpengalaman yang siap mendampingi Anda kapan saja, di mana saja.</p>
-                </div>
-                <div class="about-image">
-                    <img src="{{ asset('img/WhatsApp Image 2025-05-17 at 20.30.46_e4d1386c.jpg') }}" alt="tentang ruang pulih">
+                    <h2>About Us</h2>
+                    <p>Kami adalah platform kesehatan mental yang berkomitmen untuk menyediakan layanan yang mudah diakses dan terpercaya.</p>
+                    
+                    <div class="service-item">
+                        <div class="service-icon"></div>
+                        <div>
+                            <h3>Konsultasi Online</h3>
+                            <p>Konsultasi dengan psikolog profesional secara online kapan saja dan di mana saja.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon"></div>
+                        <div>
+                            <h3>Terhubung dengan Psikolog</h3>
+                            <p>Dapatkan akses langsung ke psikolog berpengalaman yang siap membantu Anda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon"></div>
+                        <div>
+                            <h3>Ruang Meditasi & Relaksasi</h3>
+                            <p>Nikmati sesi meditasi dan relaksasi untuk menjaga kesehatan mental Anda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item">
+                        <div class="service-icon"></div>
+                        <div>
+                            <h3>Ruang Curhat Anonim</h3>
+                            <p>Curhat dengan aman tanpa perlu khawatir tentang identitas Anda.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="educate">
+    <!-- Mental Health Section -->
+    <section class="mental-health">
         <div class="container">
-            <div class="section-title">
-                <h2>Layanan Kami</h2>
-                <p>Kami menyediakan berbagai layanan untuk mendukung kesehatan mental Anda</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <img src="{{ asset('img/ok.jpg') }}" alt="edukasi">
-                    </div>
-                    <h3>Edukasi Mental</h3>
-                    <p>Artikel dan materi edukasi tentang berbagai topik kesehatan mental yang mudah dipahami.</p>
+            <h2>Apa Saja Bentuk Mental Health?</h2>
+            <div class="mental-health-layout">
+                <!-- Menu Sidebar -->
+                <div class="mental-health-menu">
+                    <h3>Jenis Gangguan Mental</h3>
+                    <ul>
+                        <li><a href="#" class="menu-item active" data-target="kecemasan">Gangguan Kecemasan</a></li>
+                        <li><a href="#" class="menu-item" data-target="depresi">Depresi</a></li>
+                        <li><a href="#" class="menu-item" data-target="bipolar">Gangguan Bipolar</a></li>
+                        <li><a href="#" class="menu-item" data-target="ptsd">PTSD</a></li>
+                        <li><a href="#" class="menu-item" data-target="ocd">OCD</a></li>
+                        <li><a href="#" class="menu-item" data-target="adhd">ADHD</a></li>
+                    </ul>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background-color: var(--green);">
-                        <img src="{{ asset('img/ok.jpg') }}" alt="konsultasi online">
+                
+                <!-- Content Area -->
+                <div class="mental-health-content">
+                    <div class="content-section active" id="kecemasan">
+                        <h3>Gangguan Kecemasan</h3>
+                        <p>Gangguan kecemasan adalah kondisi psikologis yang ditandai dengan perasaan khawatir, gelisah, atau takut yang berlebihan. Kondisi ini dapat mempengaruhi aktivitas sehari-hari dan kualitas hidup seseorang. Beberapa jenis gangguan kecemasan yang umum meliputi gangguan kecemasan umum, gangguan panik, fobia spesifik, dan gangguan kecemasan sosial.</p>
+                        
+                        <p>Gejala fisik yang sering muncul adalah jantung berdebar, berkeringat, gemetar, sulit bernapas, dan gangguan pencernaan. Sedangkan gejala emosional meliputi perasaan tidak tenang, mudah tersinggung, sulit konsentrasi, dan takut yang tidak realistis.</p>
+                        
+                        <p>Penanganan gangguan kecemasan dapat dilakukan melalui terapi kognitif perilaku, terapi exposure, teknik relaksasi, dan dalam beberapa kasus, penggunaan obat-obatan anti-kecemasan. Dukungan keluarga dan perubahan gaya hidup juga berperan penting dalam proses pemulihan.</p>
                     </div>
-                    <h3>Konsultasi Online</h3>
-                    <p>Sesi konsultasi privat dengan psikolog profesional melalui platform online yang nyaman.</p>
+                    
+                    <div class="content-section" id="depresi">
+                        <h3>Depresi</h3>
+                        <p>Depresi adalah gangguan mood yang ditandai dengan perasaan sedih yang mendalam, kehilangan minat terhadap aktivitas yang sebelumnya disukai, dan berbagai gejala fisik serta kognitif yang berlangsung dalam waktu yang lama. Depresi lebih dari sekadar perasaan sedih biasa, tetapi merupakan kondisi medis yang serius.</p>
+                        
+                        <p>Gejala depresi meliputi perasaan putus asa, kehilangan energi, gangguan tidur, perubahan nafsu makan, kesulitan konsentrasi, perasaan bersalah yang berlebihan, dan dalam kasus yang parah, pikiran untuk menyakiti diri sendiri.</p>
+                        
+                        <p>Pengobatan depresi dapat melibatkan psikoterapi, penggunaan antidepresan, perubahan gaya hidup, olahraga teratur, dan dukungan sosial. Kombinasi berbagai pendekatan ini seringkali memberikan hasil yang optimal dalam mengatasi depresi.</p>
+                    </div>
+                    
+                    <div class="content-section" id="bipolar">
+                        <h3>Gangguan Bipolar</h3>
+                        <p>Gangguan bipolar adalah kondisi kesehatan mental yang ditandai dengan perubahan mood yang ekstrem, mulai dari episode manik (mood sangat tinggi) hingga episode depresif (mood sangat rendah). Perubahan mood ini dapat berlangsung selama berminggu-minggu atau berbulan-bulan.</p>
+                        
+                        <p>Pada episode manik, seseorang mungkin merasa sangat energik, euphoria, berbicara cepat, impulsif, dan memiliki keyakinan yang tidak realistis. Sedangkan pada episode depresif, gejala yang muncul serupa dengan depresi mayor, seperti kesedihan mendalam, kehilangan minat, dan kelelahan.</p>
+                        
+                        <p>Pengelolaan gangguan bipolar biasanya melibatkan stabilizer mood, psikoterapi, dan perubahan gaya hidup. Penting untuk menjaga rutinitas tidur yang teratur, mengelola stres, dan memiliki sistem dukungan yang kuat untuk mencegah kekambuhan.</p>
+                    </div>
+                    
+                    <div class="content-section" id="ptsd">
+                        <h3>PTSD (Post-Traumatic Stress Disorder)</h3>
+                        <p>PTSD adalah gangguan yang dapat berkembang setelah seseorang mengalami atau menyaksikan peristiwa traumatis yang mengancam jiwa atau sangat menakutkan. Kondisi ini dapat terjadi setelah peristiwa seperti kecelakaan, bencana alam, kekerasan, atau peperangan.</p>
+                        
+                        <p>Gejala PTSD meliputi kilas balik (flashbacks), mimpi buruk, menghindari situasi yang mengingatkan pada trauma, perubahan mood dan pikiran negatif, serta gejala fisik seperti sulit tidur, mudah terkejut, dan kewaspadaan berlebihan.</p>
+                        
+                        <p>Pengobatan PTSD dapat mencakup terapi trauma-focused seperti EMDR (Eye Movement Desensitization and Reprocessing), terapi kognitif perilaku, dan dalam beberapa kasus, penggunaan obat-obatan untuk mengelola gejala kecemasan dan depresi yang menyertai.</p>
+                    </div>
+                    
+                    <div class="content-section" id="ocd">
+                        <h3>OCD (Obsessive-Compulsive Disorder)</h3>
+                        <p>OCD adalah gangguan yang ditandai dengan adanya obsesi (pikiran, gambaran, atau dorongan yang tidak diinginkan dan berulang) dan kompulsi (perilaku atau tindakan mental yang berulang yang dilakukan untuk mengurangi kecemasan dari obsesi).</p>
+                        
+                        <p>Contoh obsesi yang umum termasuk takut terhadap kuman, kebutuhan akan simetri, atau pikiran yang tidak pantas. Kompulsi yang sering muncul adalah mencuci tangan berlebihan, mengecek sesuatu berulang kali, menghitung, atau menyusun barang dengan cara tertentu.</p>
+                        
+                        <p>Pengobatan OCD yang efektif meliputi terapi kognitif perilaku, khususnya Exposure and Response Prevention (ERP), dan penggunaan obat-obatan seperti SSRI (Selective Serotonin Reuptake Inhibitors). Dukungan keluarga dan pemahaman tentang kondisi ini juga sangat penting.</p>
+                    </div>
+                    
+                    <div class="content-section" id="adhd">
+                        <h3>ADHD (Attention-Deficit/Hyperactivity Disorder)</h3>
+                        <p>ADHD adalah gangguan neurodevelopmental yang ditandai dengan kesulitan mempertahankan perhatian, hiperaktivitas, dan impulsivitas. Kondisi ini biasanya dimulai pada masa kanak-kanak dan dapat berlanjut hingga dewasa.</p>
+                        
+                        <p>Gejala ADHD meliputi kesulitan fokus dan konsentrasi, mudah terganggu, lupa terhadap tugas-tugas harian, gelisah, sulit duduk diam, berbicara berlebihan, dan kesulitan menunggu giliran. Gejala dapat bervariasi antara individu.</p>
+                        
+                        <p>Penanganan ADHD dapat mencakup terapi perilaku, penggunaan obat-obatan stimulan atau non-stimulan, modifikasi lingkungan, dan strategi manajemen waktu. Pendekatan multimodal yang melibatkan keluarga, sekolah, dan profesional kesehatan mental seringkali memberikan hasil terbaik.</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background-color: var(--orange);">
-                        <img src="{{ asset('img/ok.jpg') }}" alt="support group">
-                    </div>
-                    <h3>Support Group</h3>
-                    <p>Komunitas yang mendukung di mana Anda bisa berbagi pengalaman dengan orang lain.</p>
+                
+                <!-- Image Area -->
+                <div class="mental-health-image">
+                    <span>Foto Ilustrasi<br>Kesehatan Mental</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Psychologists Section -->
-    <section class="psychologists" id="psychologists">
+    <!-- Medical Space Section -->
+    <section class="medical-space" id="ruang-meditasi">
         <div class="container">
-            <div class="section-title">
-                <h2>Tim Psikolog Kami</h2>
-                <p>Berinteraksilah dengan psikolog berpengalaman yang siap membantu Anda</p>
+            <h2>Ruang Meditasi</h2>
+            <p class="medical-space-subtitle">Temukan Pikiran, Rapatkan Persaaan</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-icon"></div>
+                    <h3>Audio Meditasi</h3>
+                    <p>Dipandu dengan suara lembut dan menenangkan untuk membantu Anda rileks.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-icon"></div>
+                    <h3>Suara Alam</h3>
+                    <p>Dengarkan suara alam yang menenangkan untuk menciptakan suasana damai.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-icon"></div>
+                    <h3>Video Relaksasi</h3>
+                    <p>Video berkonten relaksasi yang dapat membantu mengurangi stres dan kecemasan.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card-icon"></div>
+                    <h3>Pola Pernapasan</h3>
+                    <p>Pelajari teknik pernapasan yang tepat untuk mengatur emosi dan pikiran.</p>
+                </div>
             </div>
-            <div class="psychologist-cards">
-                <div class="psychologist-card">
-                    <div class="psychologist-image">
-                        <img src="{{ asset('img/balerina.jpg') }}" alt="Dr. nana">
-                    </div>
-                    <h3>Dr. nana</h3>
-                    <p class="specialty">Psikolog Klinis</p>
-                    <p class="schedule">Senin-Jumat: 09.00-15.00</p>
-                    <a href="#" class="btn">Jadwalkan</a>
+            
+            <div style="text-align: center;">
+                <a href="#" class="cta-button">Coba Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors" id="dokter">
+        <div class="container">
+            <h2>Dokter Terpercaya Dari Kita Nih</h2>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-avatar"></div>
+                    <div class="doctor-name">Budi Rian Irwan</div>
+                    <div class="doctor-specialty">Psikolog Klinis</div>
+                    <div class="doctor-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="psychologist-card">
-                    <div class="psychologist-image">
-                        <img src="{{ asset('img/balerina.jpg') }}" alt="nana imut">
-                    </div>
-                    <h3>Dr. nana imut</h3>
-                    <p class="specialty">Psikolog Anak & Remaja</p>
-                    <p class="schedule">Selasa-Kamis: 13.00-18.00</p>
-                    <a href="#" class="btn">Jadwalkan</a>
+                
+                <div class="doctor-card">
+                    <div class="doctor-avatar"></div>
+                    <div class="doctor-name">Budi Rian Irwan</div>
+                    <div class="doctor-specialty">Psikolog Klinis</div>
+                    <div class="doctor-rating">⭐⭐⭐⭐⭐</div>
                 </div>
-                <div class="psychologist-card">
-                    <div class="psychologist-image">
-                        <img src="{{ asset('img/balerina.jpg') }}" alt="nana balerina capucina">
-                    </div>
-                    <h3>Dr. nana balerina capucina</h3>
-                    <p class="specialty">Psikolog Keluarga</p>
-                    <p class="schedule">Rabu-Jumat: 10.00-16.00</p>
-                    <a href="#" class="btn">Jadwalkan</a>
+                
+                <div class="doctor-card">
+                    <div class="doctor-avatar"></div>
+                    <div class="doctor-name">Budi Rian Irwan</div>
+                    <div class="doctor-specialty">Psikolog Klinis</div>
+                    <div class="doctor-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+                
+                <div class="doctor-card">
+                    <div class="doctor-avatar"></div>
+                    <div class="doctor-name">Budi Rian Irwan</div>
+                    <div class="doctor-specialty">Psikolog Klinis</div>
+                    <div class="doctor-rating">⭐⭐⭐⭐⭐</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
+    <!-- Quote Section -->
+    <section class="quote-section">
         <div class="container">
-            <h2>Siap Memulai Perjalanan Kesehatan Mental Anda?</h2>
-            <p>Kami di sini untuk membantu Anda menemukan keseimbangan dan kedamaian dalam hidup.</p>
-            <a href="#psychologists" class="btn">Konsultasi Sekarang</a>
+            <div class="quote-content">
+                <h2>Quotes Of The Day</h2>
+                <p class="quote-text">"Jika kebahagiaan bisa mengubah hidupmu, jadilah bahagia. Jika sedih bisa mengubah dunia, jadilah sedih. Jika marah bisa mengubah semuanya, jadilah marah. Kunci kebahagiaan adalah dapat menerima semuanya dengan lapang dada dan hati yang lapang."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section class="chat-section">
+        <div class="container">
+            <div class="chat-content">
+                <div class="chat-text">
+                    <h2>Bercerita Tanpa Nama, Didengar Tanpa Penilaian</h2>
+                    <p>Apa kearean kamu merasa buat tempat untuk menceritakan kepada orang lain cerita tentang hidup kamu dengar menceritakan pengalaman yang tidak menyenangkan? Kami menyediakan ruang curhat yang aman dan terprivasi untuk Anda:</p>
+                    
+                    <ul class="chat-features">
+                        <li class="chat-feature">
+                            <div class="chat-feature-icon"></div>
+                            <div>
+                                <h3>Tulis Cerita Anonim</h3>
+                                <p>Ungkapkan isi hati Anda secara anonim tanpa perlu khawatir tentang identitas.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="chat-feature">
+                            <div class="chat-feature-icon"></div>
+                            <div>
+                                <h3>Baca Cerita Orang Lain</h3>
+                                <p>Temukan bahwa Anda tidak sendirian dalam menghadapi masalah hidup.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="chat-feature">
+                            <div class="chat-feature-icon"></div>
+                            <div>
+                                <h3>Respons Positif</h3>
+                                <p>Berikan dan terima dukungan moral dari komunitas yang peduli.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="cta-button">Coba Lebih Lanjut</a>
+                </div>
+                <div class="chat-image"></div>
+            </div>
         </div>
     </section>
 
@@ -720,47 +1004,102 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Ruang Pulih</h3>
-                    <p>Platform kesehatan mental yang menyediakan edukasi dan layanan konsultasi dengan psikolog profesional.</p>
-                    <div class="social-links">
-                        <a href="#"><img src="https://via.placeholder.com/20x20/ffffff/333333?text=f" alt="Facebook"></a>
-                        <a href="#"><img src="https://via.placeholder.com/20x20/ffffff/333333?text=t" alt="Twitter"></a>
-                        <a href="#"><img src="https://via.placeholder.com/20x20/ffffff/333333?text=i" alt="Instagram"></a>
-                        <a href="#"><img src="https://via.placeholder.com/20x20/ffffff/333333?text=l" alt="LinkedIn"></a>
-                    </div>
+                <div class="footer-section">
+                    <h3>Tentang Kami untuk Pulih Satu Hari Sekali</h3>
+                    <p>Kami berkomitmen untuk menyediakan layanan kesehatan mental yang berkualitas dan mudah diakses untuk semua orang.</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Layanan</h3>
-                    <ul>
-                        <li><a href="#educate">Edukasi Mental</a></li>
-                        <li><a href="#psychologists">Konsultasi Psikolog</a></li>
-                        <li><a href="#">Support Group</a></li>
-                        <li><a href="#">Tes Kesehatan Mental</a></li>
-                    </ul>
+                
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#edukasi">Edukasi</a>
+                    <a href="#ruang-meditasi">Ruang Meditasi</a>
+                    <a href="#dokter">Dokter</a>
                 </div>
-                <div class="footer-column">
-                    <h3>Perusahaan</h3>
-                    <ul>
-                        <li><a href="#about">Tentang Kami</a></li>
-                        <li><a href="#">Tim Kami</a></li>
-                        <li><a href="#">Karir</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
+                
+                <div class="footer-section">
+                    <h3>Kontak Kami</h3>
+                    <p>Email: info@ruangpulih.com</p>
+                    <p>Phone: +62 123 456 7890</p>
+                    <p>Alamat: Jl. Kesehatan Mental No. 123, Jakarta</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Kontak</h3>
-                    <ul>
-                        <li>Email: info@ruangpulih.com</li>
-                        <li>Telepon: (021) 1234-5678</li>
-                        <li>Alamat: Jl. Kesehatan Mental No. 123, Jakarta</li>
-                    </ul>
+                
+                <div class="footer-section">
+                    <h3>Hubungi Kami</h3>
+                    <form class="contact-form">
+                        <input type="email" placeholder="Email Anda" required>
+                        <textarea placeholder="Pesan Anda" rows="4" required></textarea>
+                        <button type="submit">Kirim</button>
+                    </form>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Ruang Pulih. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ruang Pulih. Hak Cipta Dilindungi.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mental health menu functionality
+        const menuItems = document.querySelectorAll('.menu-item');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all menu items
+                menuItems.forEach(menuItem => menuItem.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Hide all content sections
+                contentSections.forEach(section => section.classList.remove('active'));
+                
+                // Show target content section
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
