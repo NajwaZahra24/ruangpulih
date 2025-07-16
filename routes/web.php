@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CurhatController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\AudioController;
 
 // Resource untuk posts
 Route::resource('posts', PostController::class)->names([
@@ -25,6 +26,17 @@ Route::resource('videos', VideoController::class)->names([
     'edit'    => 'videos.edit',
     'update'  => 'videos.update',
     'destroy' => 'videos.destroy',
+]);
+
+// Resource untuk audios
+Route::resource('audios', AudioController::class)->names([
+    'index'   => 'audios.index',
+    'create'  => 'audios.create',
+    'store'   => 'audios.store',
+    'show'    => 'audios.show',
+    'edit'    => 'audios.edit',
+    'update'  => 'audios.update',
+    'destroy' => 'audios.destroy',
 ]);
 
 // Halaman home
