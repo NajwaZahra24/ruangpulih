@@ -14,7 +14,7 @@ class PostController extends Controller
         $posts = Post::whereNotNull('published_at')
                     ->latest('published_at')
                     ->paginate(10);
-                    
+
         return view('posts.index', compact('posts'));
     }
 
@@ -33,7 +33,6 @@ class PostController extends Controller
             'published_at' => 'nullable|date'
         ]);
 
-        // Handle datetime conversion
         if ($request->published_at) {
             $validated['published_at'] = Carbon::createFromFormat('Y-m-d\TH:i', $request->published_at);
         }
@@ -47,8 +46,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect()->route('posts.index')
-            ->with('success', 'Post berhasil ditambahkan');
+        return redirect()->route('posts.index')->with('success', 'Post berhasil ditambahkan');
     }
 
     public function show(Post $post)
@@ -56,17 +54,15 @@ class PostController extends Controller
         if (!$post->published_at) {
             abort(404); 
         }
-        
         return view('posts.show', compact('post'));
     }
 
     public function edit(Post $post)
     {
-        // Format published_at untuk input datetime-local
         if ($post->published_at) {
             $post->published_at = $post->published_at->format('Y-m-d\TH:i');
         }
-        
+
         return view('posts.edit', compact('post'));
     }
 
@@ -80,7 +76,6 @@ class PostController extends Controller
             'published_at' => 'nullable|date'
         ]);
 
-        // Handle datetime conversion
         if ($request->published_at) {
             $validated['published_at'] = Carbon::createFromFormat('Y-m-d\TH:i', $request->published_at);
         } else {
@@ -90,23 +85,20 @@ class PostController extends Controller
         $post->fill($validated);
 
         if ($request->hasFile('thumbnail')) {
-            // Hapus thumbnail lama jika ada
             if ($post->thumbnail) {
                 Storage::disk('public')->delete($post->thumbnail);
             }
-            
+
             $path = $request->file('thumbnail')->store('post_thumbnails', 'public');
             $post->thumbnail = $path;
         } elseif ($request->has('remove_thumbnail')) {
-            // Tambahkan opsi hapus thumbnail
             Storage::disk('public')->delete($post->thumbnail);
             $post->thumbnail = null;
         }
 
         $post->save();
 
-        return redirect()->route('posts.index')
-            ->with('success', 'Post berhasil diperbarui');
+        return redirect()->route('posts.index')->with('success', 'Post berhasil diperbarui');
     }
 
     public function destroy(Post $post)
@@ -114,10 +106,9 @@ class PostController extends Controller
         if ($post->thumbnail) {
             Storage::disk('public')->delete($post->thumbnail);
         }
-        
+
         $post->delete();
 
-        return redirect()->route('posts.index')
-            ->with('success', 'Post berhasil dihapus');
+        return redirect()->route('posts.index')->with('success', 'Post berhasil dihapus');
     }
 }
