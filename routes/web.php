@@ -61,3 +61,18 @@ Route::get('/curhat', [CurhatController::class, 'curhat'])->name('curhat.curhat'
 Route::get('/ruangmeditasi', function () {
     return view('rmeditasi');
 });
+
+// dokter
+Route::get('/dokter', function () {
+    return view('dokter');
+});
+
+// about
+Route::get('/about', function () {
+    return view('about');
+});
+
+// edukasi
+Route::get('/edukasi', function () {
+    return view('edukasi');
+});

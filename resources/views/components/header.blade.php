@@ -98,10 +98,10 @@
     <nav class="main-nav" id="mainNav">
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="/edukasi">Edukasi</a></li>
+        <li><a href="{{ url('/about') }}">About</a></li>
+        <li><a href="{{ url('/edukasi') }}">Edukasi</a></li>
         <li><a href="{{ url('/ruangmeditasi') }}">Ruang Meditasi</a></li>
-        <li><a href="/dokter">Dokter</a></li>
+        <li><a href="{{ url('/dokter') }}">Dokter</a></li>
       </ul>
     </nav>
     <a href="/curhat/create" class="btn-primary">Ruang Curhat</a>
