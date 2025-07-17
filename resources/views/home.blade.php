@@ -1012,7 +1012,7 @@
                 </p>
             </div>
             <div class="hero-img">
-                <img src="AssetUtamaAtas.png" alt="Ilustrasi Hero" />
+                <img src="Asset Utama Atas.png" alt="Aset hero" />
             </div>
         </div>
     </section>
