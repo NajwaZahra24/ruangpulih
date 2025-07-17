@@ -50,12 +50,10 @@ Route::get('/login', function () {
 })->name('posts.login');
 
 // Curhat routes
-Route::get('/curhat/create', function () {
-    return view('curhat.create');
-})->name('curhat.create');
-
-Route::post('/curhat', [CurhatController::class, 'store'])->name('curhat.store');
-Route::get('/curhat', [CurhatController::class, 'curhat'])->name('curhat.curhat');
+// Resource untuk audios
+Route::resource('ruangcurhat', CurhatController::class)->names([
+    'index'   => 'ruangcurhat',
+    'store'   => 'ruangcurhat.store',]);
 
 // ruang meditasi
 Route::get('/ruangmeditasi', function () {

@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('curhats', function (Blueprint $table) {
-        $table->id();
-        $table->text('pesan');
-        $table->timestamps();
-            });
+            $table->id();
+            $table->string('name')->default('Anonim');
+            $table->text('message');
+            $table->boolean('is_approved')->default(false);
+            $table->timestamps();
+        });
     }
 
     /**

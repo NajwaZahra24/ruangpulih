@@ -104,7 +104,7 @@
         <li><a href="/dokter">Dokter</a></li>
       </ul>
     </nav>
-    <a href="/curhat/create" class="btn-primary">Ruang Curhat</a>
+    <a href="/ruangcurhat" class="btn-primary">Ruang Curhat</a>
     <button class="mobile-nav-toggle" onclick="document.getElementById('mainNav').classList.toggle('active')">
       <i class="fas fa-bars"></i>
     </button>
