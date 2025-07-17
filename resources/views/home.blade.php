@@ -37,89 +37,6 @@
             padding: 0 20px;
         }
 
-        /* ======= NAVBAR ======= */
-        header.main-header {
-            background-color: #FFEDE6;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        .main-nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        .main-nav ul li a {
-            text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95em;
-            transition: color 0.3s;
-        }
-
-        .main-nav ul li a:hover {
-            color: var(--primary-orange);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-orange);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .mobile-nav-toggle {
-            display: none;
-        }
-
-        @media (max-width: 992px) {
-            .main-nav {
-                display: none;
-                width: 100%;
-                margin-top: 15px;
-                text-align: center;
-            }
-
-            .main-nav.active {
-                display: block;
-            }
-
-            .mobile-nav-toggle {
-                display: block;
-                font-size: 24px;
-                color: var(--text-dark);
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-
-            .header-content {
-                justify-content: center;
-                text-align: center;
-            }
-
-            .btn-primary {
-                margin-top: 10px;
-            }
-        }
-
         /* ======= HOME (HERO) ======= */
         @font-face {
             font-family: 'Positive Forward';
@@ -816,189 +733,11 @@
                 order: -1; /* gambar di atas pada layar kecil */
             }
         }
-
-        /* ======= FOOTER ======= */
-        footer {
-            background-color: #FF8C4B;
-            color: white;
-            padding: 40px 0 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        footer .footer-content { /* Added specificity */
-            display: grid;
-            grid-template-columns: 1fr 1px 1.5fr 1px 1fr;
-            align-items: start;
-            width: 90%;
-            max-width: 1200px;
-            padding: 0 20px;
-            margin-bottom: 40px;
-            box-sizing: border-box;
-            gap: 30px;
-        }
-
-        footer .vertical-line { /* Added specificity */
-            background-color: white;
-            width: 2px;
-            height: 100%;
-        }
-
-        footer .footer-section { /* Added specificity */
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-
-        footer .nav-links ul { /* Added specificity */
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        footer .nav-links ul li { /* Added specificity */
-            margin-bottom: 15px;
-        }
-
-        footer .nav-links ul li a { /* Added specificity */
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.05em;
-        }
-
-        footer .center-text h3 { /* Added specificity */
-            font-family: 'Fredoka One', cursive;
-            font-size: 1.7em;
-            line-height: 1.4;
-            font-weight: normal;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        footer .login-admin { /* Added specificity */
-            max-width: 400px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        footer .login-admin p { /* Added specificity */
-            font-style: italic;
-            margin: 0 0 5px 5px;
-            font-size: 0.95em;
-        }
-
-        footer .email-input,
-        footer .password-input { /* Added specificity */
-            width: 100%;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: none;
-            font-size: 1em;
-            box-sizing: border-box;
-        }
-
-        footer .password-group { /* Added specificity */
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        footer .login-admin button { /* Added specificity */
-            background-color: white;
-            color: #FF8C4B;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background 0.3s ease;
-        }
-
-        footer .login-admin button:hover { /* Added specificity */
-            background-color: #f1f1f1;
-        }
-
-        footer .contact-info h3 { /* Added specificity */
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        footer .contact-info p { /* Added specificity */
-            line-height: 1.6;
-            font-size: 1em;
-            margin: 5px 0;
-        }
-
-        footer .footer-bottom { /* Added specificity */
-            background-color: #FF671F;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        footer .footer-bottom p { /* Added specificity */
-            font-size: 0.95em;
-            font-style: italic;
-        }
-
-        footer .footer-logo { /* Added specificity */
-            height: 50px;
-        }
-
-        @media (max-width: 768px) {
-            footer .footer-content { /* Added specificity */
-                flex-direction: column;
-                align-items: center;
-                gap: 30px;
-            }
-
-            footer .vertical-line { /* Added specificity */
-                display: none;
-            }
-
-            footer .password-group { /* Added specificity */
-                flex-direction: column;
-            }
-
-            footer .footer-bottom { /* Added specificity */
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">
-                <img src="logo_ruangpeduli.png" alt="Logo Ruang Pulih">
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#">Edukasi</a></li>
-                    <li><a href="#">Ruang Meditasi</a></li>
-                    <li><a href="#">Dokter</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="btn-primary">Ruang Curhat</a>
-            <button class="mobile-nav-toggle"><i class="fas fa-bars"></i></button>
-        </div>
-    </header>
+    <x-header />
 
     <section class="hero" id="home">
         <div class="container hero-content">
@@ -1012,7 +751,7 @@
                 </p>
             </div>
             <div class="hero-img">
-                <img src="Asset Utama Atas.png" alt="Aset hero" />
+                <img src="img/Asset Utama Atas.png" alt="Aset hero" />
             </div>
         </div>
     </section>
@@ -1020,17 +759,17 @@
     <section id="about" class="about">
         <div class="container grid-2">
             <div class="about-img">
-                <img src="Oren 2.png" alt="About Image Atas" />
-                <img src="Biru 2.png" alt="About Image Bawah" />
+                <img src="img/Oren 2.png" alt="About Image Atas" />
+                <img src="img/Biru 2.png" alt="About Image Bawah" />
             </div>
             <div class="about-text">
                 <h2>About Us</h2>
                 <p>Rumah Pulih adalah ruang aman dan nyaman untuk semua orang yang ingin memahami, menyembuhkan, dan memperbaiki kesehatan mentalnya. Kami hadir sebagai teman seperjalanan, mendengarkan tanpa menghakimi, dan membantu kamu melewati hari-hari sulit dengan lebih tenang.</p>
                 <ul class="features">
-                    <li><img src="edukasi.png" alt=""><span><b>Edukasi Mental Health</b><small>Artikel dan info seputar stres, emosi, self-love, dan lainnya.</small></span></li>
-                    <li><img src="Vector.png" alt=""><span><b>Terhubung dengan Psikolog</b><small>Layanan perantara menuju psikolog terpercaya, mudah & aman.</small></span></li>
-                    <li><img src="meditasi.png" alt=""><span><b>Ruang Meditasi & Relaksasi</b><small>Audio dan video untuk menenangkan pikiran dan meredakan cemas.</small></span></li>
-                    <li><img src="curhat.png" alt=""><span><b>Ruang Curhat Anonim</b><small>Tulis isi hatimu tanpa nama, tanpa penilaian—cukup didengar.</small></span></li>
+                    <li><img src="img/edukasi.png" alt=""><span><b>Edukasi Mental Health</b><small>Artikel dan info seputar stres, emosi, self-love, dan lainnya.</small></span></li>
+                    <li><img src="img/Vector.png" alt=""><span><b>Terhubung dengan Psikolog</b><small>Layanan perantara menuju psikolog terpercaya, mudah & aman.</small></span></li>
+                    <li><img src="img/meditasi.png" alt=""><span><b>Ruang Meditasi & Relaksasi</b><small>Audio dan video untuk menenangkan pikiran dan meredakan cemas.</small></span></li>
+                    <li><img src="img/curhat.png" alt=""><span><b>Ruang Curhat Anonim</b><small>Tulis isi hatimu tanpa nama, tanpa penilaian—cukup didengar.</small></span></li>
                 </ul>
             </div>
         </div>
@@ -1087,19 +826,19 @@
                 <h2 class="subjudul">Apa yang bisa kamu temukan?</h2>
                 <ul class="fitur-list">
                     <li>
-                        <img src="meditasi.png" alt="Meditasi" />
+                        <img src="img/meditasi.png" alt="Meditasi" />
                         <span><strong>Audio Meditasi</strong> – Dipandu dengan suara lembut dan menenangkan</span>
                     </li>
                     <li>
-                        <img src="suara.png" alt="Suara Alam" />
+                        <img src="img/suara.png" alt="Suara Alam" />
                         <span><strong>Suara Alam</strong> – Hujan, ombak, angin, atau hutan—pilih suasana favoritmu</span>
                     </li>
                     <li>
-                        <img src="video.png" alt="Video Relaksasi" />
+                        <img src="img/video.png" alt="Video Relaksasi" />
                         <span><strong>Video Relaksasi</strong> – Visual tenang dengan --------</span>
                     </li>
                     <li>
-                        <img src="durasi.png" alt="Durasi" />
+                        <img src="img/durasi.png" alt="Durasi" />
                         <span><strong>Pilih Durasimu</strong> – Atur waktu pemutaran sesuai yang anda inginkan</span>
                     </li>
                 </ul>
@@ -1110,7 +849,7 @@
             </div>
 
             <div class="meditasi-image">
-                <img src="Assset Meditasi 1.png" alt="Meditasi" />
+                <img src="img/Assset Meditasi 1.png" alt="Meditasi" />
             </div>
         </div>
     </section>
@@ -1122,10 +861,10 @@
             <div class="doctor-grid">
                 <div class="doctor-card">
                     <div class="doctor-photo">
-                        <img src="dokter.png" alt="Dokter">
+                        <img src="img/doktercewe.jpg" alt="Dokter">
                     </div>
                     <div class="doctor-info">
-                        <h4>Budi Nan Iman</h4>
+                        <h4>Dr. Nana</h4>
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
@@ -1139,10 +878,10 @@
 
                 <div class="doctor-card">
                     <div class="doctor-photo">
-                        <img src="dokter.png" alt="Dokter">
+                        <img src="img/doktercewe.jpg" alt="Dokter">
                     </div>
                     <div class="doctor-info">
-                        <h4>Budi Nan Iman</h4>
+                        <h4>Dr. Nabila</h4>
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
@@ -1156,10 +895,10 @@
 
                 <div class="doctor-card">
                     <div class="doctor-photo">
-                        <img src="dokter.png" alt="Dokter">
+                        <img src="img/doktercowo.jpg" alt="Dokter">
                     </div>
                     <div class="doctor-info">
-                        <h4>Budi Nan Iman</h4>
+                        <h4>Dr. Al</h4>
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
@@ -1173,10 +912,10 @@
 
                 <div class="doctor-card">
                     <div class="doctor-photo">
-                        <img src="dokter.png" alt="Dokter">
+                        <img src="img/doktercowo.jpg" alt="Dokter">
                     </div>
                     <div class="doctor-info">
-                        <h4>Budi Nan Iman</h4>
+                        <h4>Dr. Fayyadh</h4>
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
@@ -1231,15 +970,15 @@
                 <h3 class="curhat-list-title">Apa yang bisa kamu temukan?</h3>
                 <ul class="curhat-list">
                     <li>
-                        <img src="meditasi.png" alt="Tulis Cerita Anonim">
+                        <img src="img/meditasi.png" alt="Tulis Cerita Anonim">
                         <span><strong>Tulis Cerita Anonim</strong> – Ungkapkan isi hati tanpa nama, dengan aman dan bebas.</span>
                     </li>
                     <li>
-                        <img src="suara.png" alt="Baca Kisah Orang Lain">
+                        <img src="img/suara.png" alt="Baca Kisah Orang Lain">
                         <span><strong>Baca Kisah Orang Lain</strong> – Temukan cerita yang relatable dan menguatkanmu.</span>
                     </li>
                     <li>
-                        <img src="video.png" alt="Respons Positif">
+                        <img src="img/video.png" alt="Respons Positif">
                         <span><strong>Respons Positif</strong> – Beri dukungan berupa reaksi sederhana atau kata penyemangat.</span>
                     </li>
                 </ul>
@@ -1248,57 +987,13 @@
             </div>
 
             <div class="curhat-image">
-                <img src="Biru 2.png" alt="Ilustrasi Ruang Curhat">
+                <img src="img/Biru 2.png" alt="Ilustrasi Ruang Curhat">
             </div>
 
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-
-            <div class="footer-section nav-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Edukasi</a></li>
-                    <li><a href="#">Dokter</a></li>
-                    <li><a href="#">Ruang Meditasi</a></li>
-                    <li><a href="#">Ruang Cerita</a></li>
-                </ul>
-            </div>
-
-            <div class="vertical-line"></div>
-
-            <div class="footer-section center-content">
-                <div class="center-text">
-                    <h3>Tempat Aman Untuk Pulih<br>Satu Hari Sekali</h3>
-                </div>
-                <div class="login-admin">
-                    <p>Login Admin</p>
-                    <input type="email" placeholder="*Email" class="email-input" />
-                    <div class="password-group">
-                        <input type="password" placeholder="*Password" class="password-input" />
-                        <button>Sign In</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="vertical-line"></div>
-
-            <div class="footer-section contact-info">
-                <h3>Send Us Message</h3>
-                <p>0877–0000–0000</p>
-                <p>Jln Raya Pecantingan,<br>Sekardangan Indah<br>Candi Sidoarjo</p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>@2025_Copyright_Kelompok-7</p>
-            <img src="logoputih.png" alt="Ruang Pulih Logo" class="footer-logo">
-        </div>
-    </footer>
-
+    <x-footer />
     <script>
         const mentalData = {
             anxiety: {

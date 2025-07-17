@@ -205,6 +205,6 @@
 
   <div class="footer-bottom">
     <p>@2025_Copyright_Kelompok-7</p>
-    <img src="{{ asset('logoputih.png') }}" alt="Ruang Pulih Logo" class="footer-logo">
+    <img src="{{ asset('img/Ruang Peduli Logo Putih.png') }}" alt="Ruang Pulih Logo" class="footer-logo">
   </div>
 </footer>

@@ -93,7 +93,7 @@
 
   <div class="container header-content">
     <div class="logo">
-      <img src="{{ asset('logo_ruangpeduli.png') }}" alt="Logo Ruang Pulih">
+      <img src="{{ asset('img/logo ruangpeduli.png') }}" alt="Logo Ruang Pulih">
     </div>
     <nav class="main-nav" id="mainNav">
       <ul>
