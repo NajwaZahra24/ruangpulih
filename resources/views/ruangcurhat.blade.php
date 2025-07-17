@@ -5,14 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruang Curhat - Ruang Pulih</title>
 
-  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
-    body {
+    @font-face {
+      font-family: 'Positive Forward';
+      src: url('fonts/PositiveForward.woff2') format('woff2'),
+           url('fonts/PositiveForward.woff') format('woff');
+    }
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f9f6f3;
+      box-sizing: border-box;
+    }
+
+    body {
+     font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ======= HERO ======= */
+    @font-face {
+      font-family: 'Positive Forward';
+      src: url('fonts/PositiveForward.woff2') format('woff2'),
+           url('fonts/PositiveForward.woff') format('woff');
+    }
+
+    .hero {
+      padding: 40px 0;
+    }
+
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 520px;
+    }
+
+    .hero-title, .hero-subtitle {
+      font-family: 'Positive Forward', cursive;
+      font-size: 42px;
+      font-weight: bold;
+      color: #2B190F;
+      line-height: 1.3;
+    }
+
+    .hero-subtitle {
+      margin-bottom: 25px;
+    }
+
+    .hero-text p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #3B3B3B;
+    }
+
+    .hero-img img {
+        width: 500px;
+        height: auto;
+    }
+
+    @media (max-width: 800px) {
+    .hero-img img {
+      width: 100%;
+    }
+
+      .hero-text, .hero-img {
+        max-width: 50%;
+        text-align: center;
+      }
     }
 
     .hero {
@@ -191,18 +266,21 @@
   <!-- Navbar -->
   <x-header />
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Sediakan waktu sejenak untuk dirimu.</h1>
-      <p>
-        Temukan ruangmu di sini. Bagikan cerita, curhatan, dan inspirasimu.
-        Tulis apa yang ada di hati, tanpa batasan. Jelajahi dunia kata-kata,
-        dan temukan kenyamanan dalam berbagi.
-      </p>
-    </div>
-    <div class="hero-img">
-      <img src="img/Biru 2.png" alt="Hero Image" />
+<!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Sediakan waktu sejenak</h1>
+        <h1 class="hero-subtitle">untuk dirimu.</h1>
+        <p>
+          Temukan ruangmu di sini.  Bagikan cerita, curhatan, dan 
+          inspirasimu.  Tulis apa yang ada di hati, tanpa batasan.  
+          Jelajahi dunia kata-kata, dan temukan kenyamanan dalam berbagi.
+        </p>
+      </div>
+      <div class="hero-img">
+        <img src="img/Biru 2.png" alt="Ilustrasi Hero" />
+      </div>
     </div>
   </section>
 
@@ -228,9 +306,12 @@
   <section class="curhatan-section" id="read-messages">
     <h3>Lihat curhatan sobat pulih lainnya</h3>
     <div class="curhat-grid messages-container">
-      <div class="curhat-card">Hidup memang cape ga masalah kalau kalian berhenti sejenak, cape boleh nyerah jangan</div>
+      <div class="curhat-card">Hidup memang cape ga masalah kalau kalian berhenti sejenak, cape boleh nyerah jangan.</div>
       <div class="curhat-card">Hari ini mungkin berat, tapi kamu sudah sampai sejauh ini. Itu bukti betapa kuatnya dirimu.</div>
-      <div class="curhat-card">Jalan masih panjang, masih banyak harapan...</div>
+      <div class="curhat-card">Tidak apa-apa untuk berhenti sejenak. Istirahat bukan berarti menyerah, itu bagian dari perjalananmu.</div>
+      <div class="curhat-card">Jalan masih panjang, masih banyak harapan harapan yang masih harus di perjuangkan, siapkan kekuatan dan ketangguhan, aku yakin kalian bisa memnggapai semua harapan yang kalian inginkan.</div>
+      <div class="curhat-card">Mengakhiri hidup bukan pilihan tapi mengusahakan hidup yang lebih baik adalah keharusan, meskipun harus bersusah payah saat dalam perjalanan.</div>
+      <div class="curhat-card">Kamu tidak harus selalu kuat. Menangis pun adalah tanda keberanianmu menghadapi dunia.</div>
     </div>
   </section>
 
