@@ -202,7 +202,7 @@
       </p>
     </div>
     <div class="hero-img">
-      <img src="/path/to/your/image.png" alt="Hero Image" />
+      <img src="img/Biru 2.png" alt="Hero Image" />
     </div>
   </section>
 
