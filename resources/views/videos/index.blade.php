@@ -21,96 +21,99 @@
             --dark: #333333;
             --light: #ffffff;
         }
-
         body {
             background-color: var(--cream);
             font-family: 'Segoe UI', sans-serif;
         }
-
         .navbar-ruangpulih {
-            background-color: var(--orange);
+            background-color: #feede0;
             color: var(--light);
         }
-
         .navbar-ruangpulih .nav-link,
         .navbar-ruangpulih .navbar-brand {
-            color: var(--light);
+            color: #FFA673;
             font-weight: 500;
         }
-
         .navbar-ruangpulih .nav-link:hover {
             color: var(--dark);
         }
-
         .navbar-ruangpulih .btn-ruangpulih {
             background-color: var(--light);
             color: var(--orange);
             border: none;
         }
-
         .crud-container {
             padding: 2rem;
         }
-
         .table-header {
             background-color: var(--blue);
             color: white;
         }
-
         .btn-ruangpulih {
             background-color: var(--orange);
             color: white;
         }
-
         .btn-ruangpulih:hover {
             background-color: #e36d25;
         }
-
+        .thumbnail-img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+        }
         .action-btn {
             border: none;
             background: transparent;
             font-size: 1rem;
         }
-
         .btn-view {
             color: #3498db;
         }
-
         .btn-edit {
             color: #f1c40f;
         }
-
         .btn-delete {
             color: #e74c3c;
-        }
-
-        .badge-published {
-            background-color: var(--green);
-        }
-
-        .badge-draft {
-            background-color: var(--yellow);
-        }
-
-        .card {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border: none;
-        }
-
-        .ratio iframe {
-            border-radius: 6px;
-        }
-
-        h2 {
-            color: var(--dark);
-        }
-
-        .table > :not(caption) > * > * {
-            vertical-align: middle;
         }
     </style>
 </head>
 <body>
+        <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-ruangpulih">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                  <img src="../img/logo ruangpeduli.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('posts.index') }}">Postingan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('audios.index') }}">Audio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('videos.index') }}">Vidio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dokter</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-ruangpulih me-2">
+                        <i class="fas fa-comment-dots me-1"></i> Ruang Curhat
+                    </a>
+                    <a href="#" class="btn btn-outline-light">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <div class="container crud-container">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Daftar Video</h2>

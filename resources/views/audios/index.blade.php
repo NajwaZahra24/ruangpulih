@@ -8,64 +8,108 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     :root {
-      --orange: #fc823d;
-      --blue: #88b4ff;
-      --cream: #f8f4f1;
-      --dark: #333333;
-      --light: #ffffff;
-    }
-    body {
-      background-color: var(--cream);
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .navbar-ruangpulih {
-      background-color: var(--orange);
-    }
-    .navbar-ruangpulih .nav-link,
-    .navbar-ruangpulih .navbar-brand {
-      color: white;
-    }
-    .navbar-ruangpulih .nav-link:hover {
-      color: var(--dark);
-    }
-    .btn-ruangpulih {
-      background-color: var(--orange);
-      color: white;
-    }
-    .btn-ruangpulih:hover {
-      background-color: #e36d25;
-    }
-    .table-header {
-      background-color: var(--blue);
-      color: white;
-    }
-    .thumbnail-img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 0.5rem;
-    }
-    .audio-preview {
-      width: 150px;
-    }
+            --orange: #fc823d;
+            --blue: #88b4ff;
+            --cream: #f8f4f1;
+            --green: #a5e26c;
+            --yellow: #f4c347;
+            --dark: #333333;
+            --light: #ffffff;
+        }
+        body {
+            background-color: var(--cream);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .navbar-ruangpulih {
+            background-color: #feede0;
+            color: var(--light);
+        }
+        .navbar-ruangpulih .nav-link,
+        .navbar-ruangpulih .navbar-brand {
+            color: #FFA673;
+            font-weight: 500;
+        }
+        .navbar-ruangpulih .nav-link:hover {
+            color: var(--dark);
+        }
+        .navbar-ruangpulih .btn-ruangpulih {
+            background-color: var(--light);
+            color: var(--orange);
+            border: none;
+        }
+        .crud-container {
+            padding: 2rem;
+        }
+        .table-header {
+            background-color: var(--blue);
+            color: white;
+        }
+        .btn-ruangpulih {
+            background-color: var(--orange);
+            color: white;
+        }
+        .btn-ruangpulih:hover {
+            background-color: #e36d25;
+        }
+        .thumbnail-img {
+            width: 50px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .action-btn {
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+        }
+        .btn-view {
+            color: #3498db;
+        }
+        .btn-edit {
+            color: #f1c40f;
+        }
+        .btn-delete {
+            color: #e74c3c;
+        }
   </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-ruangpulih">
-  <div class="container">
-    <a class="navbar-brand" href="#">RUANG PULIH</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"><i class="fas fa-bars text-white"></i></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="{{ route('posts.index') }}">Postingan</a></li>
-        <li class="nav-item"><a class="nav-link active" href="{{ route('audios.index') }}">Audio</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-ruangpulih">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                  <img src="../img/logo ruangpeduli.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ route('posts.index') }}">Postingan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('audios.index') }}">Audio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('videos.index') }}">Vidio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dokter</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="#" class="btn btn-ruangpulih me-2">
+                        <i class="fas fa-comment-dots me-1"></i> Ruang Curhat
+                    </a>
+                    <a href="#" class="btn btn-outline-light">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
 
 <div class="container py-5">
   @if(session('success'))
