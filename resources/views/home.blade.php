@@ -348,6 +348,8 @@
             font-size: 15px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration: none; /* ini penting untuk <a> agar tidak ada garis bawah */
+            display: inline-block; /* supaya <a> tampil seperti tombol */
         }
 
         .cta-button:hover {
@@ -884,7 +886,7 @@
                 </ul>
 
                 <div class="cta-wrapper">
-                    <button class="cta-button"><a href="{{ url('/ruangmeditasi') }}">COBA LEBIH LANJUT</a></button>
+                    <a href="{{ url('/ruangmeditasi') }}" class="cta-button">COBA LEBIH LANJUT</a>
                 </div>
             </div>
 
@@ -909,7 +911,7 @@
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
-                            <button class="btn-contact">Contact Me</button>
+                            <button class="btn-contact" onclick="window.open('https://wa.me/message/A7Y2GA4FRMDBD1', '_blank')">Contact Me</button>
                             <div class="icon-btn">f</div>
                             <div class="icon-btn">in</div>
                             <div class="icon-btn">✉</div>
@@ -926,7 +928,7 @@
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
-                            <button class="btn-contact">Contact Me</button>
+                            <button class="btn-contact" onclick="window.open('https://wa.me/message/A7Y2GA4FRMDBD1', '_blank')">Contact Me</button>
                             <div class="icon-btn">f</div>
                             <div class="icon-btn">in</div>
                             <div class="icon-btn">✉</div>
@@ -943,7 +945,7 @@
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
-                            <button class="btn-contact">Contact Me</button>
+                            <button class="btn-contact" onclick="window.open('https://wa.me/message/A7Y2GA4FRMDBD1', '_blank')">Contact Me</button>
                             <div class="icon-btn">f</div>
                             <div class="icon-btn">in</div>
                             <div class="icon-btn">✉</div>
@@ -960,7 +962,7 @@
                         <span>Psikolog Specialist</span>
                         <p>Dokter terkenal di daerah Sidoarjo lulusan Universitas Indonesia</p>
                         <div class="doctor-actions">
-                            <button class="btn-contact">Contact Me</button>
+                            <button class="btn-contact" onclick="window.open('https://wa.me/message/A7Y2GA4FRMDBD1', '_blank')">Contact Me</button>
                             <div class="icon-btn">f</div>
                             <div class="icon-btn">in</div>
                             <div class="icon-btn">✉</div>
