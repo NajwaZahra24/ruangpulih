@@ -187,7 +187,6 @@
             text-align: center;
             color: #666;
             position: relative;
-            display: inline-block;
             margin: 0 auto 40px;
         }
 
@@ -336,7 +335,6 @@
 
         .cta-wrapper {
             display: flex;
-            justify-content: center;
             margin-top: 30px;
         }
 
@@ -510,44 +508,44 @@
         /* ======= QUOTES ======= */
         .quotes-section {
             padding: 60px 20px;
-            background-color: #fff; /* Matches original body bg if needed */
-        }
+            background-color: #fff;
+            }
 
-        .quotes-container {
+            .quotes-container {
             max-width: 1200px;
             margin: 0 auto;
-        }
+            }
 
-        .quotes-title {
+            .quotes-title {
             font-size: 24px;
             font-weight: 700;
             color: #222;
             margin-bottom: 25px;
-        }
+            }
 
-        .quotes-flex {
+            .quotes-flex {
             display: flex;
             gap: 50px;
             align-items: flex-start;
             justify-content: space-between;
             flex-wrap: wrap;
-        }
+            }
 
-        .quotes-left {
+            .quotes-left {
             flex: 1;
             min-width: 280px;
             max-width: 500px;
-        }
+            }
 
-        .quotes-paragraph {
+            .quotes-paragraph {
             position: relative;
             padding-left: 16px;
             color: #444;
             line-height: 1.8;
             font-size: 16px;
-        }
+            }
 
-        .quotes-paragraph::before {
+            .quotes-paragraph::before {
             content: "";
             position: absolute;
             left: 0;
@@ -556,22 +554,24 @@
             width: 3px;
             background-color: #ff671f;
             border-radius: 3px;
-        }
+            }
 
-        .quotes-right {
+            .quotes-right {
             display: flex;
             flex-direction: column;
             align-items: center;
             flex: 1;
             min-width: 280px;
-        }
+            position: relative;
+            }
 
-        .quotes-box {
+            .quotes-box {
             width: 100%;
             max-width: 560px;
             background-color: #fff7f0;
             border-radius: 12px;
-            padding: 30px 40px;
+            padding: 30px;
+            padding-bottom: 60px; /* beri ruang untuk dots */
             box-shadow: 0 6px 18px rgba(0,0,0,0.05);
             text-align: center;
             font-style: italic;
@@ -579,34 +579,70 @@
             line-height: 1.7;
             color: #444;
             position: relative;
-        }
+            min-height: 120px;
+            box-sizing: border-box;
+            }
 
-        .quotes-box::before {
+            .quotes-box::before {
             content: "❝";
             color: #ff671f;
             font-size: 24px;
             position: absolute;
             top: 20px;
             left: 20px;
-        }
+            }
 
-        .quotes-box::after {
+            .quotes-box::after {
             content: "❞";
             color: #ff671f;
             font-size: 24px;
             position: absolute;
-            bottom: 20px;
+            bottom: 55px;
             right: 20px;
-        }
+            }
 
-        @media (max-width: 768px) {
+            .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            }
+
+            .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ffbe9f;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            }
+
+            .dot.active {
+            opacity: 1;
+            background-color: #ff671f;
+            }
+
+            @media (max-width: 768px) {
             .quotes-flex {
                 flex-direction: column;
             }
+
             .quotes-right {
                 align-items: flex-start;
             }
-        }
+
+            .quotes-box {
+                padding: 25px;
+                padding-bottom: 55px;
+            }
+
+            .quotes-box::after {
+                bottom: 50px;
+            }
+            }
 
         /* ======= RUANG CURHAT ======= */
         .curhat-section {
@@ -739,6 +775,7 @@
 
     <x-header />
 
+    <!-- hero -->
     <section class="hero" id="home">
         <div class="container hero-content">
             <div class="hero-text">
@@ -756,6 +793,7 @@
         </div>
     </section>
 
+    <!-- about us -->
     <section id="about" class="about">
         <div class="container grid-2">
             <div class="about-img">
@@ -775,6 +813,7 @@
         </div>
     </section>
 
+    <!-- edukasi -->
     <section class="mental-health">
         <div class="container">
             <h2 class="section-title">Apa Saja Bentuk Mental Health?</h2>
@@ -804,6 +843,7 @@
         </div>
     </section>
 
+    <!-- meditasi -->
     <section class="meditasi-section">
         <div class="meditasi-content">
             <div class="meditasi-text">
@@ -844,7 +884,7 @@
                 </ul>
 
                 <div class="cta-wrapper">
-                    <button class="cta-button">COBA LEBIH LANJUT</button>
+                    <button class="cta-button"><a href="{{ url('/ruangmeditasi') }}">COBA LEBIH LANJUT</a></button>
                 </div>
             </div>
 
@@ -854,6 +894,7 @@
         </div>
     </section>
 
+    <!-- dokter -->
     <section class="doctor-section">
         <div class="container">
             <h2 class="section-title">Dokter Terpercaya Dari Kita Nih</h2>
@@ -930,26 +971,35 @@
         </div>
     </section>
 
+    <!-- qoutes -->
     <section class="quotes-section">
         <div class="quotes-container">
             <h2 class="quotes-title">Quotes Off The Day</h2>
             <div class="quotes-flex">
-                <div class="quotes-left">
-                    <div class="quotes-paragraph">
-                        Satu kalimat bisa mengubah harimu. Di Rumah Pulih, kami percaya bahwa kata-kata yang tepat
-                        bisa menjadi pelukan hangat untuk jiwa yang lelah. Setiap hari, temukan kutipan inspiratif
-                        yang mengingatkanmu bahwa kamu tak sendiri, dan pulih itu mungkin.
-                    </div>
+            <!-- LEFT SIDE -->
+            <div class="quotes-left">
+                <div class="quotes-paragraph">
+                Satu kalimat bisa mengubah harimu. Di Rumah Pulih, kami percaya bahwa kata-kata yang tepat
+                bisa menjadi pelukan hangat untuk jiwa yang lelah. Setiap hari, temukan kutipan inspiratif
+                yang mengingatkanmu bahwa kamu tak sendiri, dan pulih itu mungkin.
                 </div>
-                <div class="quotes-right">
-                    <div class="quotes-box">
-                        Jangan pernah merasa sendiri, karena hidupmu istimewa untuk mereka yang saat ini telah tiada.
-                    </div>
+            </div>
+            <!-- RIGHT SIDE -->
+            <div class="quotes-right">
+                <div class="quotes-box" id="quoteBox">
+                Jangan pernah merasa sendiri, karena hidupmu istimewa untuk mereka yang saat ini telah tiada.
                 </div>
+                <div class="dots" id="dotsContainer">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
 
+    <!-- ruang curhat -->
     <section class="curhat-section">
         <div class="curhat-container">
 
@@ -994,62 +1044,89 @@
     </section>
 
     <x-footer />
+
     <script>
+        // ===== Quotes Script =====
+        const quotes = [
+            "Jangan pernah merasa sendiri, karena hidupmu istimewa untuk mereka yang saat ini telah tiada.",
+            "Saat hati lelah, diamlah sejenak. Dalam sunyi, kamu akan menemukan tenang yang tak bisa diberikan dunia.",
+            "Telat kusadar Hidup bukanlah Perihal mengambil yang kau tebar."
+        ];
+
+        let current = 0;
+        const quoteBox = document.getElementById("quoteBox");
+        const dots = document.querySelectorAll(".dot");
+
+        function showQuote(index) {
+            quoteBox.style.opacity = 0;
+            setTimeout(() => {
+            quoteBox.innerHTML = quotes[index];
+            dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+            quoteBox.style.opacity = 1;
+            }, 300);
+        }
+
+        setInterval(() => {
+            current = (current + 1) % quotes.length;
+            showQuote(current);
+        }, 5000);
+
+        // ===== Mental Health Section Script =====
         const mentalData = {
             anxiety: {
-                title: "Gangguan Kecemasan",
-                content: [
-                    "Gangguan kecemasan adalah kondisi ketika seseorang merasa khawatir atau takut berlebihan terhadap berbagai situasi, bahkan tanpa alasan yang jelas. Perasaan ini sering muncul secara terus–menerus hingga mengganggu aktivitas sehari–hari. Penyebabnya bisa berasal dari faktor genetik, ketidakseimbangan zat kimia di otak seperti serotonin, serta pengalaman traumatis atau stres berkepanjangan.",
-                    "Gejala umum yang dirasakan meliputi rasa gelisah, sulit fokus, tegang pada otot, gangguan tidur, jantung berdebar, keringat berlebih, dan rasa takut yang tidak rasional."
-                ]
+            title: "Gangguan Kecemasan",
+            content: [
+                "Gangguan kecemasan adalah kondisi ketika seseorang merasa khawatir atau takut berlebihan terhadap berbagai situasi, bahkan tanpa alasan yang jelas. Perasaan ini sering muncul secara terus–menerus hingga mengganggu aktivitas sehari–hari. Penyebabnya bisa berasal dari faktor genetik, ketidakseimbangan zat kimia di otak seperti serotonin, serta pengalaman traumatis atau stres berkepanjangan.",
+                "Gejala umum yang dirasakan meliputi rasa gelisah, sulit fokus, tegang pada otot, gangguan tidur, jantung berdebar, keringat berlebih, dan rasa takut yang tidak rasional."
+            ]
             },
             depression: {
-                title: "Depresi",
-                content: [
-                    "Depresi adalah gangguan suasana hati yang ditandai dengan perasaan sedih berkepanjangan.",
-                    "Penderita kehilangan minat terhadap aktivitas sehari-hari, merasa tidak berharga, dan bisa memiliki pikiran untuk menyakiti diri.",
-                    "Butuh penanganan psikolog atau psikiater untuk pemulihan."
-                ]
+            title: "Depresi",
+            content: [
+                "Depresi adalah gangguan suasana hati yang ditandai dengan perasaan sedih berkepanjangan.",
+                "Penderita kehilangan minat terhadap aktivitas sehari-hari, merasa tidak berharga, dan bisa memiliki pikiran untuk menyakiti diri.",
+                "Butuh penanganan psikolog atau psikiater untuk pemulihan."
+            ]
             },
             bipolar: {
-                title: "Gangguan Bipolar",
-                content: [
-                    "Gangguan bipolar ditandai oleh perubahan suasana hati yang ekstrem antara mania dan depresi.",
-                    "Seseorang bisa merasa sangat bersemangat dan produktif, lalu berubah menjadi sangat sedih dan lesu.",
-                    "Perlu pengobatan jangka panjang dan konseling."
-                ]
+            title: "Gangguan Bipolar",
+            content: [
+                "Gangguan bipolar ditandai oleh perubahan suasana hati yang ekstrem antara mania dan depresi.",
+                "Seseorang bisa merasa sangat bersemangat dan produktif, lalu berubah menjadi sangat sedih dan lesu.",
+                "Perlu pengobatan jangka panjang dan konseling."
+            ]
             },
             schizo: {
-                title: "Skizofrenia",
-                content: [
-                    "Skizofrenia menyebabkan gangguan dalam cara berpikir, merasakan, dan berperilaku.",
-                    "Gejala meliputi halusinasi, delusi, dan kesulitan membedakan kenyataan.",
-                    "Dukungan keluarga dan terapi rutin sangat penting."
-                ]
+            title: "Skizofrenia",
+            content: [
+                "Skizofrenia menyebabkan gangguan dalam cara berpikir, merasakan, dan berperilaku.",
+                "Gejala meliputi halusinasi, delusi, dan kesulitan membedakan kenyataan.",
+                "Dukungan keluarga dan terapi rutin sangat penting."
+            ]
             },
             ocd: {
-                title: "Obsessive Compulsive Disorder (OCD)",
-                content: [
-                    "OCD adalah gangguan mental dengan pikiran obsesif yang menyebabkan perilaku kompulsif.",
-                    "Contohnya mencuci tangan berulang karena takut kuman meski sudah bersih.",
-                    "Terapi perilaku kognitif sangat efektif untuk penanganannya."
-                ]
+            title: "Obsessive Compulsive Disorder (OCD)",
+            content: [
+                "OCD adalah gangguan mental dengan pikiran obsesif yang menyebabkan perilaku kompulsif.",
+                "Contohnya mencuci tangan berulang karena takut kuman meski sudah bersih.",
+                "Terapi perilaku kognitif sangat efektif untuk penanganannya."
+            ]
             },
             ptsd: {
-                title: "Post-Traumatic Stress Disorder (PTSD)",
-                content: [
-                    "PTSD terjadi setelah mengalami peristiwa traumatis seperti kecelakaan, bencana, atau kekerasan.",
-                    "Gejala bisa berupa mimpi buruk, kilas balik, dan rasa takut yang terus-menerus.",
-                    "Butuh penanganan dengan psikolog trauma."
-                ]
+            title: "Post-Traumatic Stress Disorder (PTSD)",
+            content: [
+                "PTSD terjadi setelah mengalami peristiwa traumatis seperti kecelakaan, bencana, atau kekerasan.",
+                "Gejala bisa berupa mimpi buruk, kilas balik, dan rasa takut yang terus-menerus.",
+                "Butuh penanganan dengan psikolog trauma."
+            ]
             },
             personality: {
-                title: "Gangguan Kepribadian",
-                content: [
-                    "Gangguan kepribadian adalah pola pikir dan perilaku jangka panjang yang kaku dan tidak sehat.",
-                    "Contohnya: paranoid, antisosial, atau borderline.",
-                    "Membutuhkan terapi jangka panjang dan pemahaman diri."
-                ]
+            title: "Gangguan Kepribadian",
+            content: [
+                "Gangguan kepribadian adalah pola pikir dan perilaku jangka panjang yang kaku dan tidak sehat.",
+                "Contohnya: paranoid, antisosial, atau borderline.",
+                "Membutuhkan terapi jangka panjang dan pemahaman diri."
+            ]
             }
         };
 
@@ -1058,31 +1135,32 @@
 
         menuItems.forEach(item => {
             item.addEventListener("click", () => {
-                document.querySelector(".mental-menu li.active")?.classList.remove("active");
-                item.classList.add("active");
+            document.querySelector(".mental-menu li.active")?.classList.remove("active");
+            item.classList.add("active");
 
-                const type = item.getAttribute("data-type");
-                const data = mentalData[type];
+            const type = item.getAttribute("data-type");
+            const data = mentalData[type];
 
-                contentDiv.innerHTML = `
-                    <h3>${data.title}</h3>
-                    ${data.content.map(p => `<p>${p}</p>`).join("")}
-                `;
+            contentDiv.innerHTML = `
+                <h3>${data.title}</h3>
+                ${data.content.map(p => `<p>${p}</p>`).join("")}
+            `;
             });
         });
 
-        // Mobile Nav Toggle for Navbar
-        document.addEventListener('DOMContentLoaded', function() {
+        // ===== Navbar Mobile Toggle =====
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
             const mainNav = document.querySelector('.main-nav');
 
             if (mobileNavToggle && mainNav) {
-                mobileNavToggle.addEventListener('click', function() {
-                    mainNav.classList.toggle('active');
-                });
+            mobileNavToggle.addEventListener('click', function () {
+                mainNav.classList.toggle('active');
+            });
             }
         });
     </script>
+
 
 </body>
 </html>
