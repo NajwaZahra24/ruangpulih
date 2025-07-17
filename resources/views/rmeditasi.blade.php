@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruang Meditasi - Ruang Pulih</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Positive+Forward&display=swap" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -39,7 +42,8 @@
     }
 
     .hero-text h1 {
-      font-size: 1.8rem;
+      font-family: 'Positive Forward', sans-serif;
+      font-size: 42px;
       font-weight: 800;
       color: #2d1c12;
       margin-bottom: 1rem;
@@ -103,10 +107,8 @@
       margin-top: 0.5rem;
     }
 
-    .podcast .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .podcast .grid {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .btn {
@@ -138,6 +140,10 @@
       .hero-image {
         margin-top: 1rem;
       }
+
+      .podcast .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -158,36 +164,35 @@
   </section>
 
   <section>
-  <h2 class="section-title">Pilih Suara yang Menenangkan Pikiranmu</h2>
-  <div class="section-underline"></div>
-  <div class="grid">
-    <div class="card">
-      <img src="{{ asset('img/hujan.png') }}" alt="Suara Hujan">
-      <p><strong>Suara Hujan</strong> - 2:00</p>
-      <audio controls>
-        <source src="{{ asset('audio/suara-hujan.mp3') }}" type="audio/mpeg">
-        Browser tidak mendukung audio.
-      </audio>
+    <h2 class="section-title">Pilih Suara yang Menenangkan Pikiranmu</h2>
+    <div class="section-underline"></div>
+    <div class="grid">
+      <div class="card">
+        <img src="{{ asset('img/hujan.png') }}" alt="Suara Hujan">
+        <p><strong>Suara Hujan</strong> - 2:00</p>
+        <audio controls>
+          <source src="{{ asset('audio/suara-hujan.mp3') }}" type="audio/mpeg">
+          Browser tidak mendukung audio.
+        </audio>
+      </div>
+      <div class="card">
+        <img src="{{ asset('img/ombak.png') }}" alt="Suara Ombak">
+        <p><strong>Suara Ombak</strong> - 2:00</p>
+        <audio controls>
+          <source src="{{ asset('audio/suara-ombak.mp3') }}" type="audio/mpeg">
+          Browser tidak mendukung audio.
+        </audio>
+      </div>
+      <div class="card">
+        <img src="{{ asset('img/daun.png') }}" alt="Suara Dedaunan">
+        <p><strong>Suara Dedaunan</strong> - 2:00</p>
+        <audio controls>
+          <source src="{{ asset('audio/suara-dedaunan.mp3') }}" type="audio/mpeg">
+          Browser tidak mendukung audio.
+        </audio>
+      </div>
     </div>
-    <div class="card">
-      <img src="{{ asset('img/ombak.png') }}" alt="Suara Ombak">
-      <p><strong>Suara Ombak</strong> - 2:00</p>
-      <audio controls>
-        <source src="{{ asset('audio/suara-ombak.mp3') }}" type="audio/mpeg">
-        Browser tidak mendukung audio.
-      </audio>
-    </div>
-    <div class="card">
-      <img src="{{ asset('img/daun.png') }}" alt="Suara Dedaunan">
-      <p><strong>Suara Dedaunan</strong> - 2:00</p>
-      <audio controls>
-        <source src="{{ asset('audio/suara-dedaunan.mp3') }}" type="audio/mpeg">
-        Browser tidak mendukung audio.
-      </audio>
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <section>
     <h2 class="section-title">Nikmati Visual yang Menenangkan</h2>
@@ -211,22 +216,22 @@
       <div class="card">
         <img src="img/p1.png" alt="Buat yang Lagi Stress">
         <p><strong>Buat yang Lagi Stress</strong><br><small>by Realitya Dika</small><br>53:39</p>
-        <button class="btn">Tonton</button>
+        <button class="btn"><a href="{{ url('https://youtu.be/q5x1SNjRQwY?si=ibefLY9etNtWPO-n') }}" class="cta-button">Tonton</a></button>
       </div>
       <div class="card">
         <img src="img/p2.png" alt="Bahas Mental Health">
         <p><strong>Bahas mental health</strong><br><small>by by.U</small><br>44:58</p>
-        <button class="btn">Tonton</button>
+        <button class="btn"><a href="{{ url('https://youtu.be/TaJxpUUC8S4?si=aKeD17fVtV-Qptje') }}" class="cta-button">Tonton</a></button>
       </div>
       <div class="card">
         <img src="img/p3.png" alt="Hilang arah?">
         <p><strong>Hilang arah?</strong><br><small>by SUARA BERKELAS</small><br>48:50</p>
-        <button class="btn">Tonton</button>
+        <button class="btn"><a href="{{ url('https://youtu.be/aPfxom-N1LM?si=n0-tueuz8dlkeEpF') }}" class="cta-button">Tonton</a></button>
       </div>
       <div class="card">
         <img src="img/p4.png" alt="Obat malas genz">
         <p><strong>Obat malas genz</strong><br><small>by Dr. Indrawan N</small><br>38:42</p>
-        <button class="btn">Tonton</button>
+        <button class="btn"><a href="{{ url('https://youtu.be/8dDx0Tkhb1w?si=WDQMC84dryzRW0Uh') }}" class="cta-button">Tonton</a></button>
       </div>
     </div>
   </section>
@@ -236,19 +241,17 @@
   </blockquote>
 
   <script>
-  // Dapatkan semua elemen audio dan video
-  const mediaElements = document.querySelectorAll("audio, video");
-
-  mediaElements.forEach(media => {
-    media.addEventListener("play", () => {
-      mediaElements.forEach(el => {
-        if (el !== media) {
-          el.pause();
-        }
+    const mediaElements = document.querySelectorAll("audio, video");
+    mediaElements.forEach(media => {
+      media.addEventListener("play", () => {
+        mediaElements.forEach(el => {
+          if (el !== media) {
+            el.pause();
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
 
   <x-footer />
 </body>
