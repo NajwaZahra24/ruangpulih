@@ -100,7 +100,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="/edukasi">Edukasi</a></li>
-        <li><a href="/ruangmeditasi">Ruang Meditasi</a></li>
+        <li><a href="{{ url('/ruangmeditasi') }}">Ruang Meditasi</a></li>
         <li><a href="/dokter">Dokter</a></li>
       </ul>
     </nav>

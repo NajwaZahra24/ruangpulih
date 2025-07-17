@@ -56,3 +56,8 @@ Route::get('/curhat/create', function () {
 
 Route::post('/curhat', [CurhatController::class, 'store'])->name('curhat.store');
 Route::get('/curhat', [CurhatController::class, 'curhat'])->name('curhat.curhat');
+
+// ruang meditasi
+Route::get('/ruangmeditasi', function () {
+    return view('rmeditasi');
+});

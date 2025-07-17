@@ -18,60 +18,6 @@
             line-height: 1.6;
         }
 
-        /* Header */
-        .header {
-            background-color: #FFF8F3;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #FF6B35;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            color: #FF6B35;
-        }
-
-        .cta-button {
-            background-color: #FF6B35;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #e55a2b;
-        }
-
         /* Hero Section */
         .hero {
             max-width: 1200px;
@@ -475,22 +421,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="nav-container">
-            <div class="logo">RUANG PULIH</div>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#edukasi">Edukasi</a></li>
-                    <li><a href="#meditasi" class="active">Ruang Meditasi</a></li>
-                    <li><a href="#dokter">Dokter</a></li>
-                </ul>
-            </nav>
-            <a href="#curhat" class="cta-button">Ruang Curhat</a>
-        </div>
-    </header>
+    <x-header />
 
     <!-- Hero Section -->
     <section class="hero">
@@ -632,6 +563,8 @@
             "Ketenangan bukanlah sebuah tujuan, melainkan sebuah perjalanan indah yang dimulai dari keberanian untuk berhenti sejenak dan menyatu dengan keheningan."
         </div>
     </section>
+
+    <x-footer />
 
     <script>
         // Add interactive functionality
