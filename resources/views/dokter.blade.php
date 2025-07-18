@@ -185,7 +185,7 @@
     <!-- dokter -->
     <section class="doctor-section">
         <div class="container">
-            <h2 class="section-title">Dokter Terpercaya Dari Kita Nih</h2>
+            <h2 class="section-title"><center>Dokter Terpercaya Dari Kita Nih</center></h2>
 
             <div class="doctor-grid">
                 <div class="doctor-card">
