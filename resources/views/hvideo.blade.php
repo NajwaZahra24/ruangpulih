@@ -145,37 +145,15 @@
       font-size: 1.1rem;
     }
 
-    footer {
-      background-color: var(--dark);
-      color: var(--light);
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      h1 {
-        font-size: 2rem;
-      }
-    }
   </style>
 </head>
 <body>
-  <a href="rmeditasi.blade.php" class="back-button">
+  <a href="{{ url('/ruangmeditasi') }}" class="back-button">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    Kembali
-  </a>
+        Kembali
+    </a>
 
   <div class="main-content">
     <div class="header">
@@ -261,12 +239,7 @@
     </div>
   </div>
 
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2023 Ruang Pulih. Semua hak dilindungi.</p>
-      <p>Didesain dengan ❤ untuk ketenangan pikiran Anda</p>
-    </div>
-  </footer>
+  <x-footer />
 
   <script>
     // Script untuk menghentikan video lain ketika satu video diputar
