@@ -74,3 +74,8 @@ Route::get('/about', function () {
 Route::get('/edukasi', function () {
     return view('edukasi');
 });
+
+// hvideo
+Route::get('/hvideo', function () {
+    return view('hvideo');
+});
