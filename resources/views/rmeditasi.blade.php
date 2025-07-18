@@ -75,11 +75,27 @@
       border-radius: 4px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
       gap: 1.5rem;
-      justify-items: center;
+      padding: 1rem 0;
+      scrollbar-width: thin;
+      scrollbar-color: #ff823c #fff7f0;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-track {
+      background: #fff7f0;
+      border-radius: 10px;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar-thumb {
+      background-color: #ff823c;
+      border-radius: 10px;
     }
 
     .card {
@@ -88,6 +104,8 @@
       padding: 1rem;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      min-width: 250px;
+      flex-shrink: 0;
     }
 
     .card img, .card video {
@@ -107,6 +125,13 @@
       margin-top: 0.5rem;
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      justify-items: center;
+    }
+
     .podcast .grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -120,6 +145,11 @@
       border-radius: 20px;
       cursor: pointer;
       font-size: 0.85rem;
+    }
+
+    .btn a {
+      color: white;
+      text-decoration: none;
     }
 
     blockquote {
@@ -144,6 +174,10 @@
       .podcast .grid {
         grid-template-columns: 1fr;
       }
+
+      .horizontal-scroll {
+        padding-bottom: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -166,12 +200,12 @@
   <section>
     <h2 class="section-title">Pilih Suara yang Menenangkan Pikiranmu</h2>
     <div class="section-underline"></div>
-    <div class="grid">
+    <div class="horizontal-scroll">
       <div class="card">
         <img src="{{ asset('img/hujan.png') }}" alt="Suara Hujan">
         <p><strong>Suara Hujan</strong> - 2:00</p>
         <audio controls>
-          <source src="{{ asset('audio/suara-hujan.mp3') }}" type="audio/mpeg">
+          <source src="{{ asset('audio/Suara_Hujan.mp3') }}" type="audio/mpeg">
           Browser tidak mendukung audio.
         </audio>
       </div>
@@ -179,7 +213,7 @@
         <img src="{{ asset('img/ombak.png') }}" alt="Suara Ombak">
         <p><strong>Suara Ombak</strong> - 2:00</p>
         <audio controls>
-          <source src="{{ asset('audio/suara-ombak.mp3') }}" type="audio/mpeg">
+          <source src="{{ asset('audio/suara_gelombang.mp3') }}" type="audio/mpeg">
           Browser tidak mendukung audio.
         </audio>
       </div>
@@ -187,7 +221,7 @@
         <img src="{{ asset('img/daun.png') }}" alt="Suara Dedaunan">
         <p><strong>Suara Dedaunan</strong> - 2:00</p>
         <audio controls>
-          <source src="{{ asset('audio/suara-dedaunan.mp3') }}" type="audio/mpeg">
+          <source src="{{ asset('audio/suara_dedaunan.mp3') }}" type="audio/mpeg">
           Browser tidak mendukung audio.
         </audio>
       </div>
@@ -197,14 +231,14 @@
   <section>
     <h2 class="section-title">Nikmati Visual yang Menenangkan</h2>
     <div class="section-underline"></div>
-    <div class="grid">
+    <div class="horizontal-scroll">
       <div class="card">
         <video controls poster="img/v-ombak.png" src="ombak.mp4"></video>
         <p><i>Video Ombak pantai</i> - 2:00</p>
       </div>
       <div class="card">
         <video controls poster="img/v-hujan.png" src="hujan.mp4"></video>
-        <p><i>Suara Hujan</i> - 2:00</p>
+        <p><i>Video Suara Hujan</i> - 2:00</p>
       </div>
     </div>
   </section>
@@ -237,7 +271,7 @@
   </section>
 
   <blockquote>
-    “Ketenangan bukanlah sebuah tujuan, melainkan sebuah perjalanan indah yang dimulai dari keberanian untuk berhenti sejenak dan menyatu dengan keheningan.”
+    "Ketenangan bukanlah sebuah tujuan, melainkan sebuah perjalanan indah yang dimulai dari keberanian untuk berhenti sejenak dan menyatu dengan keheningan."
   </blockquote>
 
   <script>

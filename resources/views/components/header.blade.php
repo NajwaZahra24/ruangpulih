@@ -1,6 +1,33 @@
 <!-- Header Component -->
 <header class="main-header">
   <style>
+    :root {
+            --primary-orange: #FF8C42;
+            --text-dark: #333;
+            --font-heading: 'Poppins', sans-serif;
+            --container-max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-heading);
+            color: var(--text-dark);
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
     /* ======= NAVBAR ======= */
     header.main-header {
       background-color: #FFEDE6;
