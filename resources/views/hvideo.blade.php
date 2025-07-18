@@ -174,7 +174,7 @@
       </div>
 
       <div class="video-card" data-title="suara hujan">
-        <video controls poster="img/v-hujan.png" src="hujan.mp4"></video>
+        <video controls poster="img/v-hujan.png" src="video/ombak.mp4"></video>
         <div class="video-info">
           <p class="video-title">Suara Hujan</p>
           <p>Durasi: 2:00</p>
@@ -182,23 +182,23 @@
       </div>
 
       <div class="video-card" data-title="hutan tenang">
-        <video controls poster="img/v-hutan.png" src="hutan.mp4"></video>
+        <video controls poster="img/v-hutan.png" src="video/hutan.mp4"></video>
         <div class="video-info">
           <p class="video-title">Hutan yang Tenang</p>
           <p>Durasi: 2:00</p>
         </div>
       </div>
 
-      <div class="video-card" data-title="aliran sungai">
-        <video controls poster="img/v-sungai.png" src="sungai.mp4"></video>
+      <div class="video-card" data-title="aliransungai">
+        <video controls poster="img/sungai.png" src="video/sungai.mp4"></video>
         <div class="video-info">
-          <p class="video-title">Aliran Sungai</p>
+          <p class="video-title">Danau yang tenang</p>
           <p>Durasi: 2:00</p>
         </div>
       </div>
 
       <div class="video-card" data-title="burung berkicau">
-        <video controls poster="img/v-burung.png" src="burung.mp4"></video>
+        <video controls poster="img/sungai.png" src="video/sungai.mp4"></video>
         <div class="video-info">
           <p class="video-title">Burung Berkicau</p>
           <p>Durasi: 2:00</p>
@@ -206,7 +206,7 @@
       </div>
 
       <div class="video-card" data-title="air terjun">
-        <video controls poster="img/v-airterjun.png" src="airterjun.mp4"></video>
+        <video controls poster="img/v-airterjun.png" src="video/ombak.mp4"></video>
         <div class="video-info">
           <p class="video-title">Air Terjun</p>
           <p>Durasi: 2:00</p>
@@ -214,7 +214,7 @@
       </div>
 
       <div class="video-card" data-title="pantai sunset">
-        <video controls poster="img/v-sunset.png" src="sunset.mp4"></video>
+        <video controls poster="img/v-sunset.png" src="video/hutan.mp4"></video>
         <div class="video-info">
           <p class="video-title">Pantai Sunset</p>
           <p>Durasi: 2:00</p>
@@ -222,7 +222,7 @@
       </div>
 
       <div class="video-card" data-title="kebun teh">
-        <video controls poster="img/v-teh.png" src="kebunteh.mp4"></video>
+        <video controls poster="img/v-hujan.png" src="video/hutan.mp4"></video>
         <div class="video-info">
           <p class="video-title">Kebun Teh</p>
           <p>Durasi: 2:00</p>
@@ -230,7 +230,7 @@
       </div>
 
       <div class="video-card" data-title="sawah">
-        <video controls poster="img/v-sawah.png" src="sawah.mp4"></video>
+        <video controls poster="img/sungai.png" src="video/sungai.mp4"></video>
         <div class="video-info">
           <p class="video-title">Pemandangan Sawah</p>
           <p>Durasi: 2:00</p>
