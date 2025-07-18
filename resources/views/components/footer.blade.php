@@ -167,11 +167,11 @@
     <!-- Kiri -->
     <div class="footer-section nav-links">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Edukasi</a></li>
-        <li><a href="#">Dokter</a></li>
-        <li><a href="#">Ruang Meditasi</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url('/about') }}">About</a></li>
+        <li><a href="{{ url('/edukasi') }}">Edukasi</a></li>
+        <li><a href="{{ url('/dokter') }}">Dokter</a></li>
+        <li><a href="{{ url('/ruangmeditasi') }}">Ruang Meditasi</a></li>
         <li><a href="#">Ruang Cerita</a></li>
       </ul>
     </div>
