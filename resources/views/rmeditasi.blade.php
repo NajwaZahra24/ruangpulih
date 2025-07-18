@@ -42,11 +42,15 @@
     }
 
     .hero-text h1 {
-      font-family: 'Positive Forward', sans-serif;
+      font-family: 'Positive Forward', cursive;
       font-size: 42px;
-      font-weight: 800;
-      color: #2d1c12;
-      margin-bottom: 1rem;
+      font-weight: bold;
+      color: #2B190F;
+      line-height: 1.3;
+    }
+
+    .hero-subtitel {
+      margin-bottom: 25px;
     }
 
     .hero-text p {
@@ -56,7 +60,7 @@
 
     .hero-image {
       flex: 1;
-      max-width: 300px;
+      max-width: 450px;
     }
 
     .section-title {
@@ -153,7 +157,8 @@
     }
 
     blockquote {
-      font-size: 0.95rem;
+      font-family: 'Poppins', cursive;
+      font-size: 18px;
       text-align: center;
       font-weight: 600;
       color: #2d1c12;
@@ -187,11 +192,14 @@
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Sediakan waktu sejenak untuk dirimu.</h1>
+      <h1 class="hero-text">Sediakan waktu sejenak</h1>
+      <h1 class=hero-subtitle>untuk dirimu.</h1><br>
       <p>
         Dengarkan, rasakan, dan pulihkan pikiranmu di ruang ini.<br>
-        Temukan kembali ketenangan lewat suara alam, audio meditasi, dan visual relaksasi yang kami sediakan.
-        Tarik napas perlahan, lepaskan beban harimu semua dimulai dari langkah kecil untuk kembali merasa utuh.
+        Temukan kembali ketenangan lewat suara alam, audio <br>
+        meditasi, dan visual relaksasi yang kami sediakan.<br>
+        Tarik napas perlahan, lepaskan beban harimu semua <br>
+        dimulai dari langkah kecil untuk kembali merasa utuh.<br>
       </p>
     </div>
     <img src="img/Meditasi-2 1.png" alt="Meditasi" class="hero-image" />
@@ -233,12 +241,12 @@
     <div class="section-underline"></div>
     <div class="horizontal-scroll">
       <div class="card">
-        <video controls poster="img/v-ombak.png" src="ombak.mp4"></video>
-        <p><i>Video Ombak pantai</i> - 2:00</p>
+        <a href="{{ url('/hvideo') }}"><video controls poster="img/v-ombak.png" src="ombak.mp4"></video>
+        <p><i>Video Ombak pantai</i> - 2:00</p></a>
       </div>
       <div class="card">
-        <video controls poster="img/v-hujan.png" src="hujan.mp4"></video>
-        <p><i>Video Suara Hujan</i> - 2:00</p>
+        <a href="{{ url('/hvideo') }}"><video controls poster="img/v-hujan.png" src="hujan.mp4"></video>
+        <p><i>Video Suara Hujan</i> - 2:00</p></a>
       </div>
     </div>
   </section>

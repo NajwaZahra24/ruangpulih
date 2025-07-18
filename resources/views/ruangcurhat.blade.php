@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruang Curhat - Ruang Pulih</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Fredoka+One&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     @font-face {
       font-family: 'Positive Forward';
       src: url('fonts/PositiveForward.woff2') format('woff2'),
            url('fonts/PositiveForward.woff') format('woff');
     }
+
     * {
       margin: 0;
       padding: 0;
@@ -19,44 +21,45 @@
     }
 
     body {
-     font-family: 'Poppins', sans-serif;
-      color: var(--text-dark);
+      font-family: 'Poppins', sans-serif;
       background-color: #fff;
+      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     .container {
-      max-width: var(--container-max-width);
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
     /* ======= HERO ======= */
-    @font-face {
-      font-family: 'Positive Forward';
-      src: url('fonts/PositiveForward.woff2') format('woff2'),
-           url('fonts/PositiveForward.woff') format('woff');
-    }
-
     .hero {
-      padding: 40px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 5%;
+      background-color: #fff;
     }
 
     .hero-content {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 40px;
       flex-wrap: wrap;
+      width: 100%;
+      gap: 40px;
     }
 
     .hero-text {
+      flex: 1 1 50%;
       max-width: 520px;
     }
 
-    .hero-title, .hero-subtitle {
+    .hero-title,
+    .hero-subtitle {
       font-family: 'Positive Forward', cursive;
       font-size: 42px;
       font-weight: bold;
@@ -74,47 +77,6 @@
       color: #3B3B3B;
     }
 
-    .hero-img img {
-        width: 500px;
-        height: auto;
-    }
-
-    @media (max-width: 800px) {
-    .hero-img img {
-      width: 100%;
-    }
-
-      .hero-text, .hero-img {
-        max-width: 50%;
-        text-align: center;
-      }
-    }
-
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 60px 5%;
-      background-color: #fff;
-    }
-
-    .hero-text {
-      flex: 1 1 50%;
-    }
-
-    .hero-text h1 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #2e2e2e;
-    }
-
-    .hero-text p {
-      font-size: 16px;
-      color: #444;
-    }
-
     .hero-img {
       flex: 1 1 40%;
       text-align: center;
@@ -123,6 +85,17 @@
     .hero-img img {
       max-width: 100%;
       height: auto;
+    }
+
+    @media (max-width: 800px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text, .hero-img {
+        max-width: 100%;
+      }
     }
 
     .choice-buttons {
@@ -250,10 +223,6 @@
     }
 
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-      }
-
       .quote-wayne {
         flex-direction: column;
         text-align: center;
@@ -266,15 +235,15 @@
   <!-- Navbar -->
   <x-header />
 
-<!-- HERO -->
+  <!-- HERO -->
   <section class="hero" id="home">
     <div class="container hero-content">
       <div class="hero-text">
-        <h1 class="hero-title">Sediakan waktu sejenak</h1>
+        <h1 class="hero-title">Sediakan Waktu Sejenak</h1>
         <h1 class="hero-subtitle">untuk dirimu.</h1>
         <p>
-          Temukan ruangmu di sini.  Bagikan cerita, curhatan, dan 
-          inspirasimu.  Tulis apa yang ada di hati, tanpa batasan.  
+          Temukan ruangmu di sini. Bagikan cerita, curhatan, dan 
+          inspirasimu. Tulis apa yang ada di hati, tanpa batasan.  
           Jelajahi dunia kata-kata, dan temukan kenyamanan dalam berbagi.
         </p>
       </div>
